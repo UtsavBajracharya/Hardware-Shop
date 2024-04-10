@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Orders</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      nav {
+        background-color: #444;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      
+      .search-container {
+        background-color: #f2f2f2;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      .table-container {
+        margin: 20px;
+        overflow-x: auto;
+      }
+      
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      td {
+        border: 1px solid #ddd;
+        padding: 5px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      .form-container [type="text"],
+      input[type="number"] {
+        padding: 10px;
+        margin: 5px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: calc(100% - 500px);
+      }
+      
+      label {
+        display: inline-block;
+        width: 150px;
+        margin-right: 20px;
+        text-align: right;
+      }
+      
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 200px;
+        text-align: center;
+      }
+      
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 36px;
+        height: 20px;
+      }
+      
+      .switch input {
+        display: none;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 20px;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+      }
+      
+      input:checked + .slider {
+        background-color: #4CAF50;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        transform: translateX(16px);
+      }
+      
+      .form-container {
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      
+      .form-container-operations {
+        text-align: center;
+        color: aqua;
+      }
+      
+      .operations {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .operations button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 200px;
+      }
+      
+      .operations button:hover {
+        background-color: #45a049;
+      }
+      
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>Product Orders</h1>
+  </header>
+  <nav>
+    <a href="toLand">Home</a>
+    <a href="Inventory">Inventory</a>
+    <a href="OnlineOrders">Online Orders</a>
+    <a href="ProductOrders">Product Orders</a>
+    <a href="Sales">Sales</a>
+    <a href="Billing">Billing</a>
+    <a href="Prediction">Prediction</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="search-container" id="search">
+    <input type="text" id="searchInput" onkeyup="searchInventory()" placeholder="Search inventory...">
+  </div>
+
+  <div class="operations" id="operations">
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="toggleAll" onchange="toggleOrders(event)">
+            <span class="slider"></span>
+          </label>
+          
+      <div id="toggleStatus">In Progress Orders</div>
+    </div>
+    <button onclick="addProductOrder()">Add Order</button>
+    <button id="updateButton" onclick="RecieveOrder(event)">Recieve Order</button>
+    <button id="deleteButton" onclick="CancelOrder(event)">Cancel Order</button>
+  </div>
+
+  <div class="form-container" id="addProductOrderForm" style="display: none;">
+    <h2>Add Order</h2>
+    <form method="post" action="addProductOrder">
+      <label for="productNumber">Product Number:</label>
+      <input type="number" id="productNumber" name="productNumber" required><br>
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="productName" required><br>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" required><br>
+      <label for="productCategory">Product Category:</label>
+      <input type="text" id="productCategory" name="productCategory" required><br>
+      <label for="size">Size:</label>
+      <input type="text" id="size" name="size" required><br>
+      <label for="color">Color:</label>
+      <input type="text" id="color" name="color" required><br>
+      <label for="status"> Status:</label>
+      <input type="text" id="status" name="status" required><br>
+      <label for="productQuantity">Product Quantity:</label>
+      <input type="number" id="productQuantity" name="productQuantity" required><br>
+      <label for="productPrice">Product Price:</label>
+      <input type="number" id="productPrice" name="productPrice" required><br><br>
+      <div class="form-container-operations"><input type="submit" value="Add">
+      <button onclick="goBack()">Cancel</button>
+      </div>
+      
+    </form>
+  </div>
+
+
+  <div class="table-container" id="tableContainerInventory" style="display: none;">
+    <table id="inventoryTable">
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>SKU</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Size</th>
+          <th>Color</th>
+          <th>Status</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in inventory_data %}
+          <tr>
+            <td><input type="checkbox"></td>
+            <td onclick="editField(this)">{{ item.product_id }}</td>
+            <td onclick="editField(this)">{{ item.product_name }}</td>
+            <td onclick="editField(this)">{{ item.description }}</td>
+            <td onclick="editField(this)">{{ item.category }}</td>
+            <td onclick="editField(this)">{{ item.size }}</td>
+            <td onclick="editField(this)">{{ item.color }}</td>
+            <td onclick="editField(this)">{{ item.product_status }}</td>
+            <td onclick="editField(this)">{{ item.quantity }}</td>
+            <td onclick="editField(this)">$ {{ item.price }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="table-container" id="tableContainerOrders">
+    <table id="productOrdersTable">
+      <thead>
+        <tr>
+            <th>Select</th>
+            <th>Order ID</th>
+            <th>SKU</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Ordered Date</th>
+            <th>Vendor</th>
+            <th>Status</th>
+            <th>Estimated Arrival</th>
+            <th>Ordered Quantity
+            <th>Price</th>
+
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in product_orders %}
+        <tr>{% if order.status == "Pending" or order.status == "Shipped"%}
+            <td><input type="checkbox"  ></td>
+            {%else%}
+            <td></td>
+            {%endif%}
+            <td>{{order.order_id}}</td>
+            <td>{{order.product_id}}</td>
+            <td>{{order.product_name}}</td>
+            <td>{{order.description}}</td>
+            <td>{{order.ordered_date}}</td>
+            <td>{{order.vendor}}</td>
+            <td>{{order.status}}</td>
+            <td>{{order.estimated_arrival}}</td>
+            <td>{{order.ordered_quantity}}</td>
+            <td>{{order.price}}</td>
+
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+  </div>
+</body>
+<script>
+  function searchInventory() {
+    var input, filter, table, tr, td, i, j, txtValue;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    table = document.getElementById('inventoryTable');
+    tr = table.getElementsByTagName('tr');
+  
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName('td');
+      var found = false;
+      for (j = 0; j < td.length; j++) {
+        if (td[j]) {
+          txtValue = td[j].textContent || td[j].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = '';
+            break;
+          } else {
+            tr[i].style.display = 'none';
+          }
+        }       
+      }
+    }
+  }
+  
+  function addProductOrder() {
+    var form = document.getElementById("addProductOrderForm");
+    var tableContainerInventory = document.getElementById("tableContainerInventory");
+    var tableContainerorders = document.getElementById("tableContainerOrders");
+    var operationsContainer = document.getElementById("operations");
+    var searchContainer =document.getElementById("search")
+    form.style.display = "block";
+    tableContainerInventory.style.display = "none";
+    tableContainerOrders.style.display = "none";
+    operationsContainer.style.display = "none";
+    searchContainer.style.display = "none";
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Simulate a toggle action to display only active orders by default
+    document.getElementById('toggleAll').checked = false;
+    toggleOrders();
+});
+
+function toggleOrders() {
+    var toggleAll = document.getElementById('toggleAll').checked;
+    var switchStatus = toggleAll ? 'All Orders' : 'In Progress Orders';
+    console.log('Switch status:', switchStatus);
+    
+    var toggleStatus = document.getElementById('toggleStatus');
+    toggleStatus.textContent = switchStatus; // Update the text
+    
+    var orderRows = document.getElementById('productOrdersTable').rows;
+  
+    // Loop through all order rows and toggle visibility based on the switch state
+    for (var i = 1; i < orderRows.length; i++) { // Starting from 1 to skip the header row
+      var statusCell = orderRows[i].cells[7]; // Assuming 8th column is status
+      var status = statusCell.textContent.trim();
+      var checkbox = orderRows[i].querySelector('input[type="checkbox"]');
+  
+      if (toggleAll) {
+        orderRows[i].style.display = ''; // Show all orders
+        //checkbox.disabled = true; // Enable all checkboxes
+      } else {
+        if (status !== 'Pending') {
+          orderRows[i].style.display = 'none'; // Hide non-progress orders
+          //checkbox.disabled = true; // Disable checkboxes for non-progress orders
+          //heckbox.checked = false; // Ensure checkboxes are unchecked
+        } else {
+          //orderRows[i].style.display = ''; // Show progress orders
+          //checkbox.disabled = false; // Enable checkboxes for progress orders
+        }
+      }
+    }
+}
+
+function RecieveOrder(event) {
+    if (event.target.tagName === 'BUTTON') {  
+
+
+    var selectedRows = document.querySelectorAll('#productOrdersTable input[type="checkbox"]:checked');
+    if (selectedRows.length === 0) {
+        alert("Please select rows to update.");
+    } else {
+        var updatedData = [];
+        
+        selectedRows.forEach(function(row) {
+            var rowData = {};
+            var cells = row.parentNode.parentNode.cells;
+            for (var i = 1; i < cells.length; i++) {
+                // Skip the first cell as it's for the checkbox
+                var header = productOrdersTable.rows[0].cells[i].textContent.trim();
+                var value = cells[i].textContent.trim();
+                rowData[header] = value;
+            }
+            updatedData.push(rowData);
+        });
+
+        // Send updated data to the server
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/recieveProductOrders", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send(JSON.stringify(updatedData));
+        alert("Order(s) Updated Successfully");
+        location.reload();
+    }
+}
+  }
+
+
+
+
+function CancelOrder(event) {
+    if (event.target.tagName === 'BUTTON') {  
+
+
+    var selectedRows = document.querySelectorAll('#productOrdersTable input[type="checkbox"]:checked');
+    if (selectedRows.length === 0) {
+        alert("Please select rows to update.");
+    } else {
+        var updatedData = [];
+        
+        selectedRows.forEach(function(row) {
+            var rowData = {};
+            var cells = row.parentNode.parentNode.cells;
+            for (var i = 1; i < cells.length; i++) {
+                // Skip the first cell as it's for the checkbox
+                var header = productOrdersTable.rows[0].cells[i].textContent.trim();
+                var value = cells[i].textContent.trim();
+                rowData[header] = value;
+            }
+            updatedData.push(rowData);
+        });
+
+        // Send updated data to the server
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/cancelProductOrders", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send(JSON.stringify(updatedData));
+        alert("Order(s) Updated Successfully");
+        location.reload();
+    }
+}
+  }
+
+
+  
+
+  function goBack() {
+    window.location.href = 'Inventory';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var productNumberInput = document.getElementById('productNumber');
+    productNumberInput.addEventListener('blur', function() {
+      // Call a function to fetch product data when input field loses focus
+      fetchProductData();
+    });
+  });
+
+  // Function to fetch product data and populate form fields
+  function fetchProductData() {
+    // Fetch product data based on the product ID entered by the user
+    var productId = document.getElementById('productNumber').value;
+
+    // Example: Replace this with your actual AJAX request to fetch product data
+    // For demonstration, I'm using a dummy product object
+    var productData = {
+      productName: "Example Product",
+      description: "Example Description",
+      productCategory: "Example Category",
+      size: "Example Size",
+      color: "Example Color",
+      status: "Example Status",
+      productQuantity: 10, // Example quantity
+      productPrice: 100 // Example price
+    };
+    var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/fetch_product", true);
+        xhr.setRequestHeader("Content-Type", "application/json")
+        xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                var response = JSON.parse(xhr.responseText);
+                console.log(response);
+                // Now you can use the response object
+            } else {
+                console.log('The request failed!');
+            }
+        };
+        xhr.send(JSON.stringify(productId));
+
+
+    // Populate form fields with fetched product data
+    document.getElementById('productName').value = productData.productName;
+    document.getElementById('description').value = productData.description;
+    document.getElementById('productCategory').value = productData.productCategory;
+    document.getElementById('size').value = productData.size;
+    document.getElementById('color').value = productData.color;
+    document.getElementById('status').value = productData.status;
+    document.getElementById('productQuantity').value = productData.productQuantity;
+    document.getElementById('productPrice').value = productData.productPrice;
+
+    // Show the form after populating the data
+    addProductOrder();
+  }
+  function saveField(td) {
+    var input = td.firstChild;
+    var newValue = input.value.trim();
+    if (newValue === "") {
+      // Restore previous value if the new value is empty
+      td.innerText = input.getAttribute("data-previous-value");
+    } else {
+      td.innerText = newValue;
+    }
+  }
+  
+</script>
+</html>

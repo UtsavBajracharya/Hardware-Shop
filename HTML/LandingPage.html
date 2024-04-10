@@ -1,0 +1,106 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .container {
+      position: absolute;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .icon {
+      width: 100px;
+      height: 100px;
+      text-decoration: none;
+      background-color: #90e3f7;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: #c30101;
+      border-radius: 5%;
+      text-align: center;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <header>  
+    <h1>Hardware Shoppe</h1>
+  </header>
+
+  <nav>
+    <a href="toLand">Home</a>
+    <a href="Inventory">Inventory</a>
+    <a href="OnlineOrders">Online Orders</a>
+    <a href="ProductOrders">Product Orders</a>
+    <a href="Inventory">Inventory</a>
+    <a href="Sales">Sales</a>
+    <a href="Billing">Billing</a>
+    <a href="Prediction">Prediction</a>
+
+
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <a href="Inventory" class="icon">
+        Inventory
+    </a>
+    <a href="DashBoard.html" class="icon">
+        DashBoard
+    </a>
+    <a href="LowInventory.html" class="icon">
+        Low Inventory
+    </a>
+    <a href="OnlineOrders" class="icon">
+        OnlineOrders
+    </a>
+    <a href="Prediction.html" class="icon">
+        Prediction
+    </a>
+    <a href="ProductOrders.html" class="icon">
+        Product Orders
+    </a>
+    <a href="Billing" class="icon">
+        Billing
+    </a>
+    <a href="Sales.html" class="icon">
+        Sales
+    </a>
+    
+  </div>
+
+</body>
+</html>
