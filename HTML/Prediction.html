@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #pageContent {
+            background: #E3E6E6;
+            margin: 0 auto;
+            max-width: none;
+            min-width: 1000px;
+            overflow: hidden;
+            margin-bottom: 0 !important;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .best-seller-section {
+            height: auto;
+            min-width: 33.33333%;
+            padding: 10px;
+        }
+
+        .best-seller-wrapper {
+            background: #fff;
+            margin-bottom: 0;
+        }
+
+        .fresh-shoveler {
+            padding: 10px 20px;
+        }
+
+        .fresh-shoveler .section-title {
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .fresh-shoveler .title-block-left {
+            display: block;
+            width: auto;
+            float: left;
+            font-size: 21px;
+            line-height: 1.5 !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-bottom: 0;
+        }
+
+        .section-feed-carousel {
+            width: 100%;
+            margin: 0 0 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feed-carousel-viewport {
+            width: 100%;
+            min-height: 220px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            margin: 0;
+            overflow-x: scroll;
+            scrollbar-width: thin;
+        }
+
+        .feed-carousel-shelf {
+            display: inline-block;
+            position: relative;
+            left: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .feed-carousel-card {
+            display: inline-block;
+            margin-right: 10px;
+
+            text-align: center;
+            min-width: 145px;
+            max-width: 270px;
+            max-height: 250px;
+            overflow: hidden;
+            position: relative;
+
+            vertical-align: top;
+        }
+
+        .feed-carousel-shelf li {
+            margin: 0 10px 0 0;
+            list-style: none;
+            word-wrap: break-word;
+        }
+
+        .feed-list-item {
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            min-width: 145px;
+        }
+
+        .feed-carousel-shelf .product-image {
+            width: auto;
+            height: auto;
+            max-width: 270px;
+            max-height: 250px;
+            vertical-align: middle;
+        }
+
+        .item-description {
+            padding: 10px;
+        }
+
+        .item-description label {
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>PREDICTION</h1>
+    </header>
+    <nav>
+        <a href="toLand">Home</a>
+        <a href="Inventory">Inventory</a>
+        <a href="OnlineOrders">Online Orders</a>
+        <a href="ProductOrders">Product Orders</a>
+        <a href="Sales">Sales</a>
+        <a href="Billing">Billing</a>
+        <a href="Prediction">Prediction</a>
+        <a href="#">Contact</a>
+    </nav>
+    <!-- Prediction Section -->
+    <section >
+        <div id="pageContent">
+            {% for category in sell_categories %}
+                <div class="best-seller-section">
+                    <div class="best-seller-wrapper">
+                        <div class="fresh-shoveler">
+                            <div class="section-title">
+                                <h2 class="title-block-left">Best Sellers in {{ category }}</h2>
+                            </div>
+                            <div class="section-feed-carousel">
+                                <div class="feed-carousel-viewport">
+                                    <ul class="feed-carousel-shelf">
+                                        {% for item in sell_products %}
+                                            {% if item.category == category %}
+                                                <li class="feed-carousel-card">
+                                                    <span class="feed-list-item">
+                                                        <img class="product-image" src="https://m.media-amazon.com/images/I/71SRrNMlH0L._AC_SY200_.jpg" alt="">
+                                                        <div class="item-description">
+                                                            <div>
+                                                                <label>Name: </label><span>{{ item.product_name }}</span>
+                                                            </div>
+                                                            <div>
+                                                                <label>Order Qty: </label><span>{{ item.ordered_quantity }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+            {% if less_selling is not null %}
+                <div class="best-seller-section">
+                    <div class="best-seller-wrapper">
+                        <div class="fresh-shoveler">
+                            <div class="section-title">
+                                <h2 class="title-block-left">Less Selling Products</h2>
+                            </div>
+                            <div class="section-feed-carousel">
+                                <div class="feed-carousel-viewport">
+                                    <ul class="feed-carousel-shelf">
+                                        {% for item in less_selling %}
+                                            <li class="feed-carousel-card">
+                                                <span class="feed-list-item">
+                                                    <img class="product-image" src="https://m.media-amazon.com/images/I/71SRrNMlH0L._AC_SY200_.jpg" alt="">
+                                                    <div class="item-description">
+                                                        <div>
+                                                            <label>Name: </label><span>{{ item.product_name }}</span>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+    <!-- Prediction Section Ends-->
+</body>
+<script>
+</script>
+
+</html>
