@@ -25,9 +25,10 @@ urlpatterns = [
     path('',include('LandingPage.urls')),
     path('',include('OnlineOrders.urls')),
     path('',include('ProductOrders.urls')),
+    path('',include('Prediction.urls')),
 
     # path('admin/', admin.site.urls),
-    # path('Billing', views.Billing, name='Billing'),
+    path('Billing', views.Billing, name='Billing'),
     # path('Dashboard', views.Dashboard, name='Dashboard'),
     # path('LandingPage', views.LandingPage, name='LandingPage'),
     # path('LowInventory', views.LowInventory, name='LowInventory'),

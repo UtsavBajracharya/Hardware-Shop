@@ -1,183 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Orders</title>
   <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-      
-      header {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-      
-      nav {
-        background-color: #444;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-      }
-      
-      nav a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 10px;
-      }
-      
-      .search-container {
-        background-color: #f2f2f2;
-        padding: 10px;
-        text-align: center;
-      }
-      
-      .table-container {
-        margin: 20px;
-        overflow-x: auto;
-      }
-      
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
-      th,
-      td {
-        text-align: left;
-        padding: 8px;
-      }
-      
-      td {
-        border: 1px solid #ddd;
-        padding: 5px;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      }
-      
-      th {
-        background-color: #4CAF50;
-        color: white;
-      }
-      
-      .form-container [type="text"],
-      input[type="number"] {
-        padding: 10px;
-        margin: 5px;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        width: calc(100% - 500px);
-      }
-      
-      label {
-        display: inline-block;
-        width: 150px;
-        margin-right: 20px;
-        text-align: right;
-      }
-      
-      input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        width: 200px;
-        text-align: center;
-      }
-      
-      .switch {
-        position: relative;
-        display: inline-block;
-        width: 36px;
-        height: 20px;
-      }
-      
-      .switch input {
-        display: none;
-      }
-      
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        transition: .4s;
-        border-radius: 20px;
-      }
-      
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 16px;
-        width: 16px;
-        left: 2px;
-        bottom: 2px;
-        background-color: white;
-        transition: .4s;
-        border-radius: 50%;
-      }
-      
-      input:checked + .slider {
-        background-color: #4CAF50;
-      }
-      
-      input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
-      }
-      
-      input:checked + .slider:before {
-        transform: translateX(16px);
-      }
-      
-      .form-container {
-        background-color: #f2f2f2;
-        padding: 20px;
-      }
-      
-      .form-container-operations {
-        text-align: center;
-        color: aqua;
-      }
-      
-      .operations {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      
-      .operations button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        width: 200px;
-      }
-      
-      .operations button:hover {
-        background-color: #45a049;
-      }
-      
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .search-container {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .table-container {
+      margin: 20px;
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    td {
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .form-container [type="text"],
+    input[type="number"] {
+      padding: 10px;
+      margin: 5px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      width: calc(100% - 500px);
+    }
+
+    label {
+      display: inline-block;
+      width: 150px;
+      margin-right: 20px;
+      text-align: right;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 200px;
+      text-align: center;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+    }
+
+    .switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked+.slider {
+      background-color: #4CAF50;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(16px);
+    }
+
+    .form-container {
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .form-container-operations {
+      text-align: center;
+      color: aqua;
+    }
+
+    .operations {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .operations button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 200px;
+    }
+
+    .operations button:hover {
+      background-color: #45a049;
+    }
   </style>
 
 </head>
+
 <body>
 
   <header>
@@ -199,17 +200,17 @@
 
   <div class="operations" id="operations">
     <div class="toggle-container">
-        <label class="switch">
-            <input type="checkbox" id="toggleAll" onchange="toggleOrders(event)">
-            <span class="slider"></span>
-          </label>
-          
+      <label class="switch">
+        <input type="checkbox" id="toggleAll" onchange="toggleOrders(event)">
+        <span class="slider"></span>
+      </label>
+
       <div id="toggleStatus">In Progress Orders</div>
     </div>
     <button id="updateButton" onclick="Packed(event)">Pack Order</button>
     <button id="deleteButton" onclick="CancelOrder(event)">Cancel Order</button>
   </div>
-  
+
 
   <div class="form-container" id="addProductForm" style="display: none;">
     <h2>Add Product</h2>
@@ -233,9 +234,9 @@
       <label for="productPrice">Product Price:</label>
       <input type="number" id="productPrice" name="productPrice" required><br><br>
       <div class="form-container-operations"><input type="submit" value="Add">
-      <button onclick="goBack()">Cancel</button>
+        <button onclick="goBack()">Cancel</button>
       </div>
-      
+
     </form>
   </div>
 
@@ -252,17 +253,17 @@
           <th>Ordered Quantity</th>
           <th>Status</th>
 
-          
+
         </tr>
       </thead>
       <tbody>
         {% for order in online_orders %}
         <tr>
-            {%if order.status == "Processed" or order.status == "Cancelled"%}
-            <td><input type="checkbox"  disabled></td>
-            {%else%}
-            <td><input type="checkbox"></td>
-            {%endif%}
+          {%if order.status == "Processed" or order.status == "Cancelled"%}
+          <td><input type="checkbox" disabled></td>
+          {%else%}
+          <td><input type="checkbox"></td>
+          {%endif%}
           <td><a href="#" onclick="showOrderDetails('{{ order.order_id }}')">{{ order.order_id }}</a></td>
           <td>{{ order.customer_name }}</td>
           <td>
@@ -281,118 +282,130 @@
           </td>
           <td>
             <ul>
-                {% for item in order.order_items %}
-                <li>{{ item.available_quantity }}</li>
-                {% endfor %}
+              {% for item in order.order_items %}
+              <li>{{ item.available_quantity }}</li>
+              {% endfor %}
             </ul>
           </td>
           <td>
             <ul>
-                {% for item in order.order_items %}
-                <li>{{ item.ordered_quantity }}</li>
-                {% endfor %}
+              {% for item in order.order_items %}
+              <li>{{ item.ordered_quantity }}</li>
+              {% endfor %}
             </ul>
           </td>
-          
+
           <td>{{ order.status }}</td>
         </tr>
         {% endfor %}
-        
+
       </tbody>
     </table>
   </div>
-  
+
 
 </body>
 <script>
+
   function searchOnlineOrders() {
+    var toggleAll = document.getElementById('toggleAll').checked;
+    var switchStatus = toggleAll ? 'All Orders' : 'Pending Orders';
+    var toggleStatus = document.getElementById('toggleStatus');
+    toggleStatus.textContent = switchStatus; // Update the text
+
     var input, filter, table, tr, td, i, j, txtValue;
     input = document.getElementById('searchInput');
     filter = input.value.toUpperCase();
     table = document.getElementById('onlineOrdersTable');
     tr = table.getElementsByTagName('tr');
-  
+
     for (i = 0; i < tr.length; i++) {
       td = tr[i].getElementsByTagName('td');
+      var statusCell = tr[i].cells[7]; // Assuming 8th column is status
+      var status = statusCell.textContent.trim();
       var found = false;
       for (j = 0; j < td.length; j++) {
         if (td[j]) {
           txtValue = td[j].textContent || td[j].innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = '';
+            if (toggleAll) {
+              tr[i].style.display = ''; // Show all orders
+            } else {
+              if (status == 'WIP' || status == 'Pending') {
+                tr[i].style.display = ''; // Hide non-progress orders
+              } else {
+                tr[i].style.display = 'none'; // Show progress orders
+              }
+            }
             break;
           } else {
             tr[i].style.display = 'none';
           }
-        }       
+        }
       }
     }
   }
-  
-  
-  document.addEventListener('DOMContentLoaded', function() {
+
+  document.addEventListener('DOMContentLoaded', function () {
     // Simulate a toggle action to display only active orders by default
     document.getElementById('toggleAll').checked = false;
     toggleOrders();
-});
+  });
 
-function toggleOrders() {
+  function toggleOrders() {
     var toggleAll = document.getElementById('toggleAll').checked;
-    var switchStatus = toggleAll ? 'All Orders' : 'In Progress Orders';
-    console.log('Switch status:', switchStatus);
-    
+    var switchStatus = toggleAll ? 'All Orders' : 'Pending Orders';
+
     var toggleStatus = document.getElementById('toggleStatus');
     toggleStatus.textContent = switchStatus; // Update the text
-    
+
     var orderRows = document.getElementById('onlineOrdersTable').rows;
-  
+
     // Loop through all order rows and toggle visibility based on the switch state
     for (var i = 1; i < orderRows.length; i++) { // Starting from 1 to skip the header row
       var statusCell = orderRows[i].cells[7]; // Assuming 8th column is status
       var status = statusCell.textContent.trim();
       var checkbox = orderRows[i].querySelector('input[type="checkbox"]');
-  
+
       if (toggleAll) {
         orderRows[i].style.display = ''; // Show all orders
         //checkbox.disabled = true; // Enable all checkboxes
       } else {
-        if (status !== 'WIP') {
-          orderRows[i].style.display = 'none'; // Hide non-progress orders
+        if (status == 'WIP' || status == 'Pending') {
+          orderRows[i].style.display = ''; // Hide non-progress orders
           //checkbox.disabled = true; // Disable checkboxes for non-progress orders
           //heckbox.checked = false; // Ensure checkboxes are unchecked
         } else {
-          //orderRows[i].style.display = ''; // Show progress orders
+          orderRows[i].style.display = 'none'; // Show progress orders
           //checkbox.disabled = false; // Enable checkboxes for progress orders
         }
       }
     }
-}
+  }
 
 
-  
-    // Your existing Packed function logic
+
+  // Your existing Packed function logic
 
 
   function Packed(event) {
-    if (event.target.tagName === 'BUTTON') {  
-
-
-    var selectedRows = document.querySelectorAll('#onlineOrdersTable input[type="checkbox"]:checked');
-    if (selectedRows.length === 0) {
+    if (event.target.tagName === 'BUTTON') {
+      var selectedRows = document.querySelectorAll('#onlineOrdersTable input[type="checkbox"]:checked');
+      if (selectedRows.length === 0) {
         alert("Please select rows to update.");
-    } else {
+      } else {
         var updatedData = [];
-        
-        selectedRows.forEach(function(row) {
-            var rowData = {};
-            var cells = row.parentNode.parentNode.cells;
-            for (var i = 1; i < cells.length; i++) {
-                // Skip the first cell as it's for the checkbox
-                var header = onlineOrdersTable.rows[0].cells[i].textContent.trim();
-                var value = cells[i].textContent.trim();
-                rowData[header] = value;
-            }
-            updatedData.push(rowData);
+
+        selectedRows.forEach(function (row) {
+          var rowData = {};
+          var cells = row.parentNode.parentNode.cells;
+          for (var i = 1; i < cells.length; i++) {
+            // Skip the first cell as it's for the checkbox
+            var header = onlineOrdersTable.rows[0].cells[i].textContent.trim();
+            var value = cells[i].textContent.trim();
+            rowData[header] = value;
+          }
+          updatedData.push(rowData);
         });
 
         // Send updated data to the server
@@ -403,30 +416,30 @@ function toggleOrders() {
         xhr.send(JSON.stringify(updatedData));
         alert("Order(s) Updated Successfully");
         location.reload();
+      }
     }
-}
   }
 
   function CancelOrder(event) {
-    if (event.target.tagName === 'BUTTON') {  
+    if (event.target.tagName === 'BUTTON') {
 
 
-    var selectedRows = document.querySelectorAll('#onlineOrdersTable input[type="checkbox"]:checked');
-    if (selectedRows.length === 0) {
+      var selectedRows = document.querySelectorAll('#onlineOrdersTable input[type="checkbox"]:checked');
+      if (selectedRows.length === 0) {
         alert("Please select rows to update.");
-    } else {
+      } else {
         var updatedData = [];
-        
-        selectedRows.forEach(function(row) {
-            var rowData = {};
-            var cells = row.parentNode.parentNode.cells;
-            for (var i = 1; i < cells.length; i++) {
-                // Skip the first cell as it's for the checkbox
-                var header = onlineOrdersTable.rows[0].cells[i].textContent.trim();
-                var value = cells[i].textContent.trim();
-                rowData[header] = value;
-            }
-            updatedData.push(rowData);
+
+        selectedRows.forEach(function (row) {
+          var rowData = {};
+          var cells = row.parentNode.parentNode.cells;
+          for (var i = 1; i < cells.length; i++) {
+            // Skip the first cell as it's for the checkbox
+            var header = onlineOrdersTable.rows[0].cells[i].textContent.trim();
+            var value = cells[i].textContent.trim();
+            rowData[header] = value;
+          }
+          updatedData.push(rowData);
         });
 
         // Send updated data to the server
@@ -437,22 +450,22 @@ function toggleOrders() {
         xhr.send(JSON.stringify(updatedData));
         alert("Order(s) Updated Successfully");
         location.reload();
+      }
     }
-}
   }
 
 
 
 
-  
+
 
   function goBack() {
     window.location.href = 'Inventory';
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var inventoryTable = document.getElementById('inventoryTable');
-  
+
     // Function to handle editing on double-click
     function editField(td) {
       var input = document.createElement("input");
@@ -462,20 +475,20 @@ function toggleOrders() {
       td.innerHTML = ""; // Clear the cell's content
       td.appendChild(input);
       input.focus(); // Focus on the input field
-      input.addEventListener('blur', function() {
+      input.addEventListener('blur', function () {
         saveField(td);
       });
     }
-  
+
     // Add event listener to trigger editField on double-click
-    inventoryTable.addEventListener('dblclick', function(event) {
+    inventoryTable.addEventListener('dblclick', function (event) {
       var target = event.target;
       if (target.tagName === 'TD') {
         editField(target);
       }
     });
   });
-  
+
   function saveField(td) {
     var input = td.firstChild;
     var newValue = input.value.trim();
@@ -487,6 +500,7 @@ function toggleOrders() {
     }
   }
 
-  
+
 </script>
+
 </html>
