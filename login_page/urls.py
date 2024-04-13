@@ -7,7 +7,7 @@ urlpatterns = [
     path('userAuthentication', views.userAuthentication, name='userAuthentication'),
     path('addUser', views.addUser, name='addUser'),
     path('showRecords', views.showRecords, name='showRecords'),
-    path('toLand',views.toLand, name='toLand' ),
+    path('home',views.home, name='home' ),
     
 
 ]
