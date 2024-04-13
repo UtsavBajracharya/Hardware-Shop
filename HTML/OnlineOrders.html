@@ -383,11 +383,7 @@
     }
   }
 
-
-
   // Your existing Packed function logic
-
-
   function Packed(event) {
     if (event.target.tagName === 'BUTTON') {
       var selectedRows = document.querySelectorAll('#onlineOrdersTable input[type="checkbox"]:checked');
@@ -422,42 +418,38 @@
 
   function CancelOrder(event) {
     if (event.target.tagName === 'BUTTON') {
-
-
       var selectedRows = document.querySelectorAll('#onlineOrdersTable input[type="checkbox"]:checked');
       if (selectedRows.length === 0) {
         alert("Please select rows to update.");
       } else {
-        var updatedData = [];
+        var confirmed = confirm("Are you sure you want to cancel the  selected order(s)?");
+        if (confirmed) {
+          var updatedData = [];
 
-        selectedRows.forEach(function (row) {
-          var rowData = {};
-          var cells = row.parentNode.parentNode.cells;
-          for (var i = 1; i < cells.length; i++) {
-            // Skip the first cell as it's for the checkbox
-            var header = onlineOrdersTable.rows[0].cells[i].textContent.trim();
-            var value = cells[i].textContent.trim();
-            rowData[header] = value;
-          }
-          updatedData.push(rowData);
-        });
+          selectedRows.forEach(function (row) {
+            var rowData = {};
+            var cells = row.parentNode.parentNode.cells;
+            for (var i = 1; i < cells.length; i++) {
+              // Skip the first cell as it's for the checkbox
+              var header = onlineOrdersTable.rows[0].cells[i].textContent.trim();
+              var value = cells[i].textContent.trim();
+              rowData[header] = value;
+            }
+            updatedData.push(rowData);
+          });
 
-        // Send updated data to the server
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/cancelOrders", true);
-        xhr.setRequestHeader("Content-Type", "application/json");
+          // Send updated data to the server
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/cancelOrders", true);
+          xhr.setRequestHeader("Content-Type", "application/json");
 
-        xhr.send(JSON.stringify(updatedData));
-        alert("Order(s) Updated Successfully");
-        location.reload();
+          xhr.send(JSON.stringify(updatedData));
+          alert("Order(s) Updated Successfully");
+          location.reload();
+        }
       }
     }
   }
-
-
-
-
-
 
   function goBack() {
     window.location.href = 'Inventory';

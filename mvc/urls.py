@@ -25,6 +25,7 @@ urlpatterns = [
     path('',include('LandingPage.urls')),
     path('',include('OnlineOrders.urls')),
     path('',include('ProductOrders.urls')),
+    path('',include('LowInventory.urls')),
     path('',include('Prediction.urls')),
 
     # path('admin/', admin.site.urls),

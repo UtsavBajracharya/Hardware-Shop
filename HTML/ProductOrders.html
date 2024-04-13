@@ -69,7 +69,7 @@
       }
       
       .form-container [type="text"],
-      input[type="number"] {
+      input[type="number"], select {
         padding: 10px;
         margin: 5px;
         display: inline-block;
@@ -194,7 +194,7 @@
     <a href="#">Contact</a>
   </nav>
   <div class="search-container" id="search">
-    <input type="text" id="searchInput" onkeyup="searchInventory()" placeholder="Search inventory...">
+    <input type="text" id="searchInput" onkeyup="searchInventory()" placeholder="Search Orders...">
   </div>
 
   <div class="operations" id="operations">
@@ -228,10 +228,17 @@
       <input type="text" id="color" name="color" required><br>
       <label for="status"> Status:</label>
       <input type="text" id="status" name="status" required><br>
-      <label for="productQuantity">Product Quantity:</label>
+      <label for="productQuantity">On Hand Quantity:</label>
       <input type="number" id="productQuantity" name="productQuantity" required><br>
       <label for="productPrice">Product Price:</label>
-      <input type="number" id="productPrice" name="productPrice" required><br><br>
+      <input type="text" id="productPrice" name="productPrice" required><br><br>
+      <label for="orderQuantity">Order Quantity:</label>
+      <input type="number" id="orderQuantity" name="orderQuantity" required><br>
+      
+      <label for="vendor">Vendor:</label>
+      <select id="vendor" name="vendor" required>
+        <option value="vendor">Select Vendor</option>
+      </select><br><br>
       <div class="form-container-operations"><input type="submit" value="Add">
       <button onclick="goBack()">Cancel</button>
       </div>
@@ -323,7 +330,7 @@
     var input, filter, table, tr, td, i, j, txtValue;
     input = document.getElementById('searchInput');
     filter = input.value.toUpperCase();
-    table = document.getElementById('inventoryTable');
+    table = document.getElementById('productOrdersTable');
     tr = table.getElementsByTagName('tr');
   
     for (i = 0; i < tr.length; i++) {
@@ -439,7 +446,9 @@ function CancelOrder(event) {
     if (selectedRows.length === 0) {
         alert("Please select rows to update.");
     } else {
-        var updatedData = [];
+      var confirmed = confirm("Are you sure you want to cancel the  selected order(s)?");
+      if (confirmed) {
+      var updatedData = [];
         
         selectedRows.forEach(function(row) {
             var rowData = {};
@@ -462,7 +471,7 @@ function CancelOrder(event) {
         alert("Order(s) Updated Successfully");
         location.reload();
     }
-}
+}}
   }
 
 
@@ -473,37 +482,52 @@ function CancelOrder(event) {
   }
 
   document.addEventListener('DOMContentLoaded', function() {
+    // Extract product ID from the URL
+    var productId = getUrlParameter('productId');
+    if (productId !== '') {
+      // Fetch product data if product ID is present in the URL
+      fetchProductData_1(productId);
+    }
+
+    // Event listener for blur event on productNumberInput
     var productNumberInput = document.getElementById('productNumber');
     productNumberInput.addEventListener('blur', function() {
       // Call a function to fetch product data when input field loses focus
-      fetchProductData();
+      fetchProductData(this.value);
     });
   });
-
-  // Function to fetch product data and populate form fields
-  function fetchProductData() {
+  function fetchProductData_1(productId) {
     // Fetch product data based on the product ID entered by the user
-    var productId = document.getElementById('productNumber').value;
+    //var productId = document.getElementById('productNumber').value;
 
     // Example: Replace this with your actual AJAX request to fetch product data
     // For demonstration, I'm using a dummy product object
-    var productData = {
-      productName: "Example Product",
-      description: "Example Description",
-      productCategory: "Example Category",
-      size: "Example Size",
-      color: "Example Color",
-      status: "Example Status",
-      productQuantity: 10, // Example quantity
-      productPrice: 100 // Example price
-    };
+    var productData;
     var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/fetch_product", true);
+        xhr.open("POST", "/fetchProduct", true);
         xhr.setRequestHeader("Content-Type", "application/json")
         xhr.onload = function() {
             if (xhr.status >= 200 && xhr.status < 300) {
                 var response = JSON.parse(xhr.responseText);
                 console.log(response);
+                productData = response;
+                document.getElementById('productNumber').value=productData.SKU
+                document.getElementById('productName').value = productData.Name;
+                document.getElementById('description').value = productData.Description;
+                document.getElementById('productCategory').value = productData.Category;
+                document.getElementById('size').value = productData.Size;
+                document.getElementById('color').value = productData.Color;
+                document.getElementById('status').value = productData.Status;
+                document.getElementById('productQuantity').value = productData.Quantity;
+                document.getElementById('productPrice').value = productData.Price;
+                var select = document.getElementById('vendor');
+                select.innerHTML = ''; // Clear existing options
+                productData.vendor.forEach(function(vendor) {
+                    var option = document.createElement('option');
+                    option.value = vendor;
+                    option.textContent = vendor;
+                    select.appendChild(option);
+                });
                 // Now you can use the response object
             } else {
                 console.log('The request failed!');
@@ -513,16 +537,52 @@ function CancelOrder(event) {
 
 
     // Populate form fields with fetched product data
-    document.getElementById('productName').value = productData.productName;
-    document.getElementById('description').value = productData.description;
-    document.getElementById('productCategory').value = productData.productCategory;
-    document.getElementById('size').value = productData.size;
-    document.getElementById('color').value = productData.color;
-    document.getElementById('status').value = productData.status;
-    document.getElementById('productQuantity').value = productData.productQuantity;
-    document.getElementById('productPrice').value = productData.productPrice;
+// Show the form after populating the data
+    addProductOrder();
+  }
+  
+  // Function to fetch product data and populate form fields
+  function fetchProductData() {
+    // Fetch product data based on the product ID entered by the user
+    var productId = document.getElementById('productNumber').value;
 
-    // Show the form after populating the data
+    // Example: Replace this with your actual AJAX request to fetch product data
+    // For demonstration, I'm using a dummy product object
+    var productData;
+    var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/fetchProduct", true);
+        xhr.setRequestHeader("Content-Type", "application/json")
+        xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                var response = JSON.parse(xhr.responseText);
+                console.log(response);
+                productData = response;
+                document.getElementById('productName').value = productData.Name;
+                document.getElementById('description').value = productData.Description;
+                document.getElementById('productCategory').value = productData.Category;
+                document.getElementById('size').value = productData.Size;
+                document.getElementById('color').value = productData.Color;
+                document.getElementById('status').value = productData.Status;
+                document.getElementById('productQuantity').value = productData.Quantity;
+                document.getElementById('productPrice').value = productData.Price;
+                var select = document.getElementById('vendor');
+                select.innerHTML = ''; // Clear existing options
+                productData.vendor.forEach(function(vendor) {
+                    var option = document.createElement('option');
+                    option.value = vendor;
+                    option.textContent = vendor;
+                    select.appendChild(option);
+                });
+                // Now you can use the response object
+            } else {
+                console.log('The request failed!');
+            }
+        };
+        xhr.send(JSON.stringify(productId));
+
+
+    // Populate form fields with fetched product data
+// Show the form after populating the data
     addProductOrder();
   }
   function saveField(td) {
@@ -535,6 +595,18 @@ function CancelOrder(event) {
       td.innerText = newValue;
     }
   }
+
+function getUrlParameter(name) {
+  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+  var results = regex.exec(window.location.search);
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+  var productId = getUrlParameter('productId');
+if (productId) {
+    fetchProductData(productId);
+}
   
 </script>
 </html>
