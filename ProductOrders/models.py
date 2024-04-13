@@ -5,4 +5,5 @@ from db_connection import db
 online_orders= db['online_orders']
 inventory_data= db['products']
 product_orders= db['product_orders']
+vendors=db['vendor']
 

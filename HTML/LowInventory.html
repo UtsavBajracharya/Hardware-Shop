@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Low Inventory</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .search-container {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: center;
+    }
+    .table-container {
+      margin: 20px;
+      overflow-x: auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    td {
+      border: 1px solid #ddd; /* Gray border */
+      padding: 5px; /* Padding inside cells */
+    }
+  
+    /* Apply specific styles to table cells */
+td:nth-child(1) { /* Product Number */
+  width: 0px; /* Minimum width */
+  overflow: auto; /* Hide overflow content */
+}
+td:nth-child(2) { /* Product Number */
+  width: 100px; /* Minimum width */
+  overflow: auto; /* Hide overflow content */
+}
+
+td:nth-child(3) { /* Name */
+  min-width: 200px; /* Minimum width */
+  max-width: 300px; /* Maximum width */
+  overflow: auto; /* Enable overflow scrolling */
+}
+
+td:nth-child(4) { /* Category */
+  min-width: 150px; /* Minimum width */
+  max-width: 200px; /* Maximum width */
+  overflow: hidden; /* Hide overflow content */
+}
+
+td:nth-child(5), /* Quantity */
+td:nth-child(6) { /* Price */
+  min-width: 100px; /* Minimum width */
+  max-width: 150px; /* Maximum width */
+  overflow: hidden; /* Hide overflow content */
+}
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .form-container [type="text"], input[type="number"] {
+      padding: 10px;
+      margin: 5px ;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      width: calc(100% - 500px); /* Adjusted width for input fields */
+    }
+    label {
+      display: inline-block;
+      width: 150px; /* Adjust the width as needed */
+      margin-right: 20px; /* Adjust the value to control spacing */
+      text-align: right; /* Align label text to the right */
+  }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 10px; /* Added margin */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 200px;
+      text-align: center;
+    }
+
+    .form-container {
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .form-container-operations {
+      text-align: center;
+      color: aqua;
+    }
+    .operations {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 10px; /* Added margin */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 200px;
+    }
+    .operations button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>LOW INVENTORY</h1>
+  </header>
+  <nav>
+    <a href="toLand">Home</a>
+    <a href="Inventory">Inventory</a>
+    <a href="OnlineOrders">Online Orders</a>
+    <a href="ProductOrders">Product Orders</a>
+    <a href="LowInventory">Low Inventory</a>
+    <a href="Sales">Sales</a>
+    <a href="Billing">Billing</a>
+    <a href="Prediction">Prediction</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="search-container" id="search">
+    <input type="text" id="searchInput" onkeyup="searchInventory()" placeholder="Search Low Inventory...">
+  </div>
+
+  <div class="operations" id="operations">
+    <button onclick="addProduct()">Add Product</button>
+    <button id="updateButton" onclick="updateProducts()" >Update Selected</button>
+    <button id="deleteButton" onclick="deleteProducts()" >Delete Selected</button>
+  </div>
+
+
+  <div class="table-container" id="tableContainer">
+    <table id="inventoryTable">
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>SKU</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Size</th>
+          <th>Color</th>
+          <th>Status</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Order Now</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in inventory_data %}
+          <tr>
+            <td><input type="checkbox"></td>
+            <td onclick="editField(this)">{{ item.product_id }}</td>
+            <td onclick="editField(this)">{{ item.product_name }}</td>
+            <td onclick="editField(this)">{{ item.description }}</td>
+            <td onclick="editField(this)">{{ item.category }}</td>
+            <td onclick="editField(this)">{{ item.size }}</td>
+            <td onclick="editField(this)">{{ item.color }}</td>
+            <td onclick="editField(this)">{{ item.product_status }}</td>
+            <td onclick="editField(this)">{{ item.quantity }}</td>
+            <td onclick="editField(this)">$ {{ item.price }}</td>
+            <td><a href="#" onclick="showOrderDetails('{{ item.product_id }}')">Order Now</a></td>          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="form-container" id="addProductForm" style="display: none;">
+    <h2>Set Threshold</h2>
+    <form method="post" action="addProduct">
+      <label for="productNumber">Product Number:</label>
+      <input type="number" id="productNumber" name="productNumber" required><br>
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="productName" required><br>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" required><br>
+      <label for="productCategory">Product Category:</label>
+      <input type="text" id="productCategory" name="productCategory" required><br>
+      <label for="size">Size:</label>
+      <input type="text" id="size" name="size" required><br>
+      <label for="color">Color:</label>
+      <input type="text" id="color" name="color" required><br>
+      <label for="status"> Status:</label>
+      <input type="text" id="status" name="status" required><br>
+      <label for="productQuantity">Product Quantity:</label>
+      <input type="number" id="productQuantity" name="productQuantity" required><br>
+      <label for="productPrice">Product Price:</label>
+      <input type="number" id="productPrice" name="productPrice" required><br><br>
+      <div class="form-container-operations"><input type="submit" value="Add">
+      <button onclick="goBack()">Cancel</button>
+      </div>
+      
+    </form>
+  </div>
+
+
+</body>
+<script>
+function showOrderDetails(productId) {
+    // Construct the URL with the product ID as a query parameter
+    var url = 'ProductOrders?productId=' + encodeURIComponent(productId);
+    
+    // Redirect the user to the target page with the product ID included in the URL
+    window.location.href = url;
+  }
+
+  function searchInventory() {
+    var input, filter, table, tr, td, i, j, txtValue;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    table = document.getElementById('inventoryTable');
+    tr = table.getElementsByTagName('tr');
+  
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName('td');
+      var found = false;
+      for (j = 0; j < td.length; j++) {
+        if (td[j]) {
+          txtValue = td[j].textContent || td[j].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = '';
+            break;
+          } else {
+            tr[i].style.display = 'none';
+          }
+        }       
+      }
+    }
+  }
+  
+  function addProduct() {
+    var form = document.getElementById("addProductForm");
+    var tableContainer = document.getElementById("tableContainer");
+    var operationsContainer = document.getElementById("operations");
+    var searchContainer =document.getElementById("search")
+    form.style.display = "block";
+    tableContainer.style.display = "none";
+    operationsContainer.style.display = "none";
+    searchContainer.style.display = "none";
+  }
+
+  function updateProducts() {
+    var selectedRows = document.querySelectorAll('input[type="checkbox"]:checked');
+    if (selectedRows.length === 0) {
+        alert("Please select rows to update.");
+    } else {
+        var updatedData = [];
+        
+        selectedRows.forEach(function(row) {
+            var rowData = {};
+            var cells = row.parentNode.parentNode.cells;
+            for (var i = 1; i < cells.length; i++) {
+                // Skip the first cell as it's for the checkbox
+                var header = inventoryTable.rows[0].cells[i].textContent.trim();
+                var value = cells[i].textContent.trim();
+                rowData[header] = value;
+            }
+            updatedData.push(rowData);
+        });
+
+        // Send updated data to the server
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/update_selected_rows", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send(JSON.stringify(updatedData));
+        alert("Product(s) Updated Successfully");
+        location.reload();
+    }
+}
+
+
+
+function deleteProducts() {
+  var selectedRows = document.querySelectorAll('input[type="checkbox"]:checked');
+  if (selectedRows.length === 0) {
+      alert("Please select rows to delete.");
+  } else {
+      // Ask for confirmation before deleting
+      var confirmed = confirm("Are you sure you want to delete the selected row(s)?");
+      if (confirmed) {
+          var updatedData = [];
+
+          selectedRows.forEach(function(row) {
+              var rowData = {};
+              var cells = row.parentNode.parentNode.cells;
+              for (var i = 1; i < cells.length; i++) {
+                  // Skip the first cell as it's for the checkbox
+                  var header = inventoryTable.rows[0].cells[i].textContent.trim();
+                  var value = cells[i].textContent.trim();
+                  rowData[header] = value;
+              }
+              updatedData.push(rowData);
+          });
+
+          // Send updated data to the server
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/delete_selected_rows", true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+
+          xhr.send(JSON.stringify(updatedData));
+          alert("Product(s) Deleted Successfully");
+          location.reload();
+      }
+  }
+}
+
+
+  
+
+  function goBack() {
+    window.location.href = 'Inventory';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var inventoryTable = document.getElementById('inventoryTable');
+  
+    // Function to handle editing on double-click
+    function editField(td) {
+      var input = document.createElement("input");
+      input.type = "text";
+      input.value = td.innerText.trim();
+      input.setAttribute("data-previous-value", input.value);
+      td.innerHTML = ""; // Clear the cell's content
+      td.appendChild(input);
+      input.focus(); // Focus on the input field
+      input.addEventListener('blur', function() {
+        saveField(td);
+      });
+    }
+  
+    // Add event listener to trigger editField on double-click
+    inventoryTable.addEventListener('dblclick', function(event) {
+      var target = event.target;
+      if (target.tagName === 'TD') {
+        editField(target);
+      }
+    });
+  });
+  
+  function saveField(td) {
+    var input = td.firstChild;
+    var newValue = input.value.trim();
+    if (newValue === "") {
+      // Restore previous value if the new value is empty
+      td.innerText = input.getAttribute("data-previous-value");
+    } else {
+      td.innerText = newValue;
+    }
+  }
+  
+</script>
+</html>
