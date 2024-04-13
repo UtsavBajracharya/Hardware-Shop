@@ -415,6 +415,8 @@ function toggleOrders() {
     if (selectedRows.length === 0) {
         alert("Please select rows to update.");
     } else {
+      var confirmed = confirm("Are you sure you want to cancel the  selected order(s)?");
+      if (confirmed) {
         var updatedData = [];
         
         selectedRows.forEach(function(row) {
@@ -437,7 +439,7 @@ function toggleOrders() {
         xhr.send(JSON.stringify(updatedData));
         alert("Order(s) Updated Successfully");
         location.reload();
-    }
+    }}
 }
   }
 
