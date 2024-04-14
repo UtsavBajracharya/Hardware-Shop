@@ -128,7 +128,7 @@
         }
 
         .feed-carousel-shelf .product-image {
-            width: auto;
+            width: 75%;
             height: auto;
             max-width: 270px;
             max-height: 250px;
@@ -152,10 +152,11 @@
         <h1>PREDICTION</h1>
     </header>
     <nav>
-        <a href="home">Home</a>
+        <a href="LandingPage">Home</a>
         <a href="Inventory">Inventory</a>
         <a href="OnlineOrders">Online Orders</a>
         <a href="ProductOrders">Product Orders</a>
+        <a href="LowInventory">Low Inventory</a>
         <a href="Sales">Sales</a>
         <a href="Billing">Billing</a>
         <a href="Prediction">Prediction</a>
@@ -178,7 +179,7 @@
                                             {% if item.category == category %}
                                                 <li class="feed-carousel-card">
                                                     <span class="feed-list-item">
-                                                        <img class="product-image" src="https://m.media-amazon.com/images/I/71SRrNMlH0L._AC_SY200_.jpg" alt="">
+                                                        <img class="product-image" src={{ item.product_image }} alt="">
                                                         <div class="item-description">
                                                             <div>
                                                                 <label>Name: </label><span>{{ item.product_name }}</span>
@@ -212,7 +213,7 @@
                                         {% for item in less_selling %}
                                             <li class="feed-carousel-card">
                                                 <span class="feed-list-item">
-                                                    <img class="product-image" src="https://m.media-amazon.com/images/I/71SRrNMlH0L._AC_SY200_.jpg" alt="">
+                                                    <img class="product-image" src={{ item.product_image }} alt="">
                                                     <div class="item-description">
                                                         <div>
                                                             <label>Name: </label><span>{{ item.product_name }}</span>

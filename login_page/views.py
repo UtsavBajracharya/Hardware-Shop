@@ -35,7 +35,7 @@ def userAuthentication(request):
     else:
         return HttpResponse("Authentication Failed")
     
-def home(request):
+def LandingPage(request):
     return render(request,'LandingPage.html')
 def Inventory(request):
     return render(request, 'Inventory.html')
