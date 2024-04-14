@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login_page',
     'LandingPage',
-    'Billing',
     'Dashboard',
     'LowInventory',
     'OnlineOrders',

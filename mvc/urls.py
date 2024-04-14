@@ -28,7 +28,7 @@ urlpatterns = [
     path('',include('LowInventory.urls')),
     path('',include('Prediction.urls')),
     path('',include('Contact.urls')),
-    # path('',include('Billing.urls')),
+    path('',include('Sales.urls')),
 
     # path('admin/', admin.site.urls),
     # path('Billing', views.Billing, name='Billing'),

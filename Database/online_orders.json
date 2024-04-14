@@ -13,7 +13,7 @@
   {
     "order_id": 1006,
     "customer_name": "Customer 15",
-    "status": "Cancelled",
+    "status": "Processed",
     "order_items": [
       {
         "product_id": 1000078,
@@ -22,6 +22,10 @@
       {
         "product_id": 1000079,
         "ordered_quantity": 2
+      },
+      {
+        "product_id": 1000075,
+        "ordered_quantity": 10
       }
     ]
   },
