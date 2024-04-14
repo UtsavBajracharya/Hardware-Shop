@@ -180,15 +180,6 @@
     border-radius: 5px;
 }
 
-
-/* Position the arrow on the right */
-select[data-selected] {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
-    background-repeat: no-repeat;
-    background-position: right .75rem center;
-    background-size: 16px 16px;
-}
-
   </style>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -285,7 +276,7 @@ select[data-selected] {
                     <textarea class="form-control" rows="5" id="comment" placeholder="Message" name="message" required></textarea>
                     <span id="messageError" class="error"></span>
                 </div>
-                <button class="btn btn-block" type="submit">Send Now!</button>
+                <button class="btn btn-block" type="submit">Send Message</button>
             </form>
             <div id="successMessage" class="alert alert-success" role="alert">
               Message sent successfully!
