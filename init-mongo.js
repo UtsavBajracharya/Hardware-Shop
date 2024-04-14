@@ -1,0 +1,6 @@
+db = db.getSiblingDB('hardware_shop')
+db.createCollection('products') 
+db.createCollection('product_orders')  
+db.createCollection('online_orders') 
+db.createCollection('customers')  
+db.createCollection('vendors')
