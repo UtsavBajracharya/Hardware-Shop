@@ -1,0 +1,516 @@
+[{
+    "firstName": "John",
+    "lastName": "Smith",
+    "age": 25,
+    "address":
+    {
+        "streetAddress": "37 Bell Estate",
+        "city": "Toronto",
+        "province": "Ontario",
+        "postalCode": "M1LOG5"
+    },
+    "phoneNumber": [
+    
+        {
+          "number": "646 555-467"
+        }
+    ],
+
+        "email": "johnsmith@gmail.com"   
+},
+
+{
+    "firstName": "Byan",
+    "lastName": "Dorich",
+    "age": 25,
+    "address":
+    {
+        "streetAddress": "12 victoia park",
+        "city": "Toronto",
+        "province": "London",
+        "postalCode": "M1NOI5"
+    },
+    "phoneNumber": [
+    
+        {
+          "number": "646 555-467"
+        }
+    ],
+
+        "email": "johnsmith@gmail.com"   
+},
+
+{
+    "firstName": "Bob",
+    "lastName": "Miller",
+    "age": 35,
+    "address": {
+      "streetAddress": "456 Elm St",
+      "city": "Los Angeles",
+      "state": "California",
+      "postalCode": "90001"
+    },
+    "phoneNumber": [
+      {
+        "number": "310-555-5678"
+      }
+    ],
+    "email": "bob.miller@gmail.com"
+  },
+
+
+  {
+    "firstName": "Charlie",
+    "lastName": "Davis",
+    "age": 28,
+    "address": {
+      "streetAddress": "789 Oak St",
+      "city": "Chicago",
+      "state": "Illinois",
+      "postalCode": "60601"
+    },
+    "phoneNumber": [
+      {
+        "number": "312-555-6789"
+      }
+    ],
+    "email": "charlie.davis@gmail.com"
+  },
+
+
+  {
+    "firstName": "David",
+    "lastName": "Wilson",
+    "age": 40,
+    "address": {
+      "streetAddress": "101 Pine St",
+      "city": "San Francisco",
+      "state": "California",
+      "postalCode": "94101"
+    },
+    "phoneNumber": [
+      {
+        "number": "415-555-8901"
+      }
+    ],
+    "email": "david.wilson@gmail.com"
+  },
+
+
+  {
+    "firstName": "Emily",
+    "lastName": "Taylor",
+    "age": 32,
+    "address": {
+      "streetAddress": "202 Maple St",
+      "city": "Seattle",
+      "state": "Washington",
+      "postalCode": "98101"
+    },
+    "phoneNumber": [
+      {
+        "number": "206-555-2345"
+      }
+    ],
+    "email": "emily.taylor@gmail.com"
+  },
+
+
+  {
+    "firstName": "Frank",
+    "lastName": "Anderson",
+    "age": 45,
+    "address": {
+      "streetAddress": "303 Cedar St",
+      "city": "Dallas",
+      "state": "Texas",
+      "postalCode": "75201"
+    },
+    "phoneNumber": [
+      {
+        "number": "214-555-6789"
+      }
+    ],
+    "email": "frank.anderson@gmail.com"
+  },
+
+
+  {
+    "firstName": "Grace",
+    "lastName": "Martinez",
+    "age": 27,
+    "address": {
+      "streetAddress": "404 Walnut St",
+      "city": "Miami",
+      "state": "Florida",
+      "postalCode": "33101"
+    },
+    "phoneNumber": [
+      {
+        "number": "305-555-7890"
+      }
+    ],
+    "email": "grace.martinez@gmail.com"
+  },
+
+
+  {
+    "firstName": "Henry",
+    "lastName": "Garcia",
+    "age": 38,
+    "address": {
+      "streetAddress": "505 Cherry St",
+      "city": "Houston",
+      "state": "Texas",
+      "postalCode": "77001"
+    },
+    "phoneNumber": [
+      {
+        "number": "713-555-1234"
+      }
+    ],
+    "email": "henry.garcia@gmail.com"
+  },
+
+
+  {
+    "firstName": "Ivy",
+    "lastName": "Lopez",
+    "age": 29,
+    "address": {
+      "streetAddress": "606 Pine St",
+      "city": "Atlanta",
+      "state": "Georgia",
+      "postalCode": "30301"
+    },
+    "phoneNumber": [
+      {
+        "number": "404-555-5678"
+      }
+    ],
+    "email": "ivy.lopez@gmail.com"
+  },
+
+
+  {
+    "firstName": "Jack",
+    "lastName": "Hernandez",
+    "age": 42,
+    "address": {
+      "streetAddress": "707 Elm St",
+      "city": "Phoenix",
+      "state": "Arizona",
+      "postalCode": "85001"
+    },
+    "phoneNumber": [
+      {
+        "number": "602-555-8901"
+      }
+    ],
+    "email": "jack.hernandez@gmail.com"
+  },
+
+
+  {
+    "firstName": "Katie",
+    "lastName": "Young",
+    "age": 31,
+    "address": {
+      "streetAddress": "808 Oak St",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "postalCode": "02101"
+    },
+    "phoneNumber": [
+      {
+        "number": "617-555-2345"
+      }
+    ],
+    "email": "katie.young@gmail.com"
+  },
+
+
+  {
+    "firstName": "Liam",
+    "lastName": "Lee",
+    "age": 33,
+    "address": {
+      "streetAddress": "909 Maple St",
+      "city": "Denver",
+      "state": "Colorado",
+      "postalCode": "80201"
+    },
+    "phoneNumber": [
+      {
+        "number": "303-555-6789"
+      }
+    ],
+    "email": "liam.lee@gmail.com"
+  },
+
+
+  {
+    "firstName": "Mia",
+    "lastName": "King",
+    "age": 36,
+    "address": {
+      "streetAddress": "1010 Cedar St",
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "postalCode": "19101"
+    },
+    "phoneNumber": [
+      {
+        "number": "215-555-1234"
+      }
+    ],
+    "email": "mia.king@gmail.com"
+  },
+
+
+  {
+    "firstName": "Noah",
+    "lastName": "Wright",
+    "age": 39,
+    "address": {
+      "streetAddress": "1111 Walnut St",
+      "city": "Detroit",
+      "state": "Michigan",
+      "postalCode": "48201"
+    },
+    "phoneNumber": [
+      {
+        "number": "313-555-5678"
+      }
+    ],
+    "email": "noah.wright@gmail.com"
+  },
+
+
+  {
+    "firstName": "Olivia",
+    "lastName": "Adams",
+    "age": 34,
+    "address": {
+      "streetAddress": "1212 Cherry St",
+      "city": "Minneapolis",
+      "state": "Minnesota",
+      "postalCode": "55401"
+    },
+    "phoneNumber": [
+      {
+        "number": "612-555-8901"
+      }
+    ],
+    "email": "olivia.adams@gmail.com"
+  },
+
+
+  {
+    "firstName": "Peter",
+    "lastName": "Perez",
+    "age": 37,
+    "address": {
+      "streetAddress": "1313 Pine St",
+      "city": "San Antonio",
+      "state": "Texas",
+      "postalCode": "78201"
+    },
+    "phoneNumber": [
+      {
+        "number": "210-555-2345"
+      }
+    ],
+    "email": "peter.perez@gmail.com"
+  },
+
+
+  {
+    "firstName": "Quinn",
+    "lastName": "Gonzalez",
+    "age": 32,
+    "address": {
+      "streetAddress": "1414 Elm St",
+      "city": "San Diego",
+      "state": "California",
+      "postalCode": "92101"
+    },
+    "phoneNumber": [
+      {
+        "number": "619-555-6789"
+      }
+    ],
+    "email": "quinn.gonzalez@gmail.com"
+  },
+
+
+  {
+    "firstName": "Ryan",
+    "lastName": "Rodriguez",
+    "age": 29,
+    "address": {
+      "streetAddress": "1515 Oak St",
+      "city": "Orlando",
+      "state": "Florida",
+      "postalCode": "32801"
+    },
+    "phoneNumber": [
+      {
+        "number": "407-555-1234"
+      }
+    ],
+    "email": "ryan.rodriguez@gmail.com"
+  },
+
+
+  {
+    "firstName": "Sophia",
+    "lastName": "Hernandez",
+    "age": 38,
+    "address": {
+      "streetAddress": "1616 Maple St",
+      "city": "Portland",
+      "state": "Oregon",
+      "postalCode": "97201"
+    },
+    "phoneNumber": [
+      {
+        "number": "503-555-5678"
+      }
+    ],
+    "email": "sophia.hernandez@gmail.com"
+  },
+
+
+  {
+    "firstName": "Thomas",
+    "lastName": "Lopez",
+    "age": 35,
+    "address": {
+      "streetAddress": "1717 Cedar St",
+      "city": "Austin",
+      "state": "Texas",
+      "postalCode": "78701"
+    },
+    "phoneNumber": [
+      {
+        "number": "512-555-8901"
+      }
+    ],
+    "email": "thomas.lopez@gmail.com"
+  },
+
+
+  {
+    "firstName": "Uma",
+    "lastName": "Chavez",
+    "age": 33,
+    "address": {
+      "streetAddress": "1818 Walnut St",
+      "city": "Nashville",
+      "state": "Tennessee",
+      "postalCode": "37201"
+    },
+    "phoneNumber": [
+      {
+        "number": "615-555-2345"
+      }
+    ],
+    "email": "uma.chavez@gmail.com"
+  },
+
+
+  {
+    "firstName": "Vincent",
+    "lastName": "Nguyen",
+    "age": 30,
+    "address": {
+      "streetAddress": "1919 Cherry St",
+      "city": "Charlotte",
+      "state": "North Carolina",
+      "postalCode": "28201"
+    },
+    "phoneNumber": [
+      {
+        "number": "704-555-6789"
+      }
+    ],
+    "email": "vincent.nguyen@gmail.com"
+  },
+
+
+  {
+    "firstName": "Wendy",
+    "lastName": "Kim",
+    "age": 28,
+    "address": {
+      "streetAddress": "2020 Elm St",
+      "city": "Las Vegas",
+      "state": "Nevada",
+      "postalCode": "89101"
+    },
+    "phoneNumber": [
+      {
+        "number": "702-555-1234"
+      }
+    ],
+    "email": "wendy.kim@gmail.com"
+  },
+
+
+  {
+    "firstName": "Xavier",
+    "lastName": "Patel",
+    "age": 31,
+    "address": {
+      "streetAddress": "2121 Oak St",
+      "city": "Indianapolis",
+      "state": "Indiana",
+      "postalCode": "46201"
+    },
+    "phoneNumber": [
+      {
+        "number": "317-555-5678"
+      }
+    ],
+    "email": "xavier.patel@gmail.com"
+  },
+
+
+  {
+    "firstName": "Yara",
+    "lastName": "Singh",
+    "age": 29,
+    "address": {
+      "streetAddress": "2222 Maple St",
+      "city": "Raleigh",
+      "state": "North Carolina",
+      "postalCode": "27601"
+    },
+    "phoneNumber": [
+      {
+        "number": "919-555-8901"
+      }
+    ],
+    "email": "yara.singh@gmail.com"
+  },
+  
+  {
+    "firstName": "Zachary",
+    "lastName": "Gomez",
+    "age": 34,
+    "address": {
+      "streetAddress": "2323 Cedar St",
+      "city": "Salt Lake City",
+      "state": "Utah",
+      "postalCode": "84101"
+    },
+    "phoneNumber": [
+      {
+        "number": "801-555-2345"
+      }
+    ],
+    "email": "zachary.gomez@gmail.com"
+  }
+
+]
