@@ -37,7 +37,6 @@ def Sales(request):
             item['discount'] = product_details.get('discount', 0)
             item['grossTotal'] = round(float(item['price']) * float(item['ordered_quantity']), 2)
             item['netTotal'] = round(float(item['grossTotal']) - float(item['discount']), 2)
-    print(unique_items)
     return render(request, 'Sales.html', {'sold_product': unique_items})
 
 def get_product_details(product_id):

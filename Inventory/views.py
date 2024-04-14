@@ -65,10 +65,7 @@ def addProduct(request):
 
 def updateProducts(request):
     updatedRowsList=handle_ajax_request(request)
-    print(updatedRowsList)
     for document in updatedRowsList:
-        print("Document : ")
-        print(document)
         record = Product(document)
         record = json.loads(json.dumps(record.__dict__)) #converting the object to a string first then to a dict
 
@@ -86,7 +83,6 @@ def handle_ajax_request(request):
 
         # Parse the JSON string into a Python data structure
         data = json.loads(json_string)
-        print(data)
         # Iterate through the data
         updatedRowsList = []
         for item in data:
@@ -112,10 +108,7 @@ def handle_ajax_request(request):
 
 def deleteProducts(request):
     updatedRowsList=handle_ajax_request(request)
-    print(updatedRowsList)
     for document in updatedRowsList:
-        print("Document : ")
-        print(document)
         record = Product(document)
         record = json.loads(json.dumps(record.__dict__)) #converting the object to a string first then to a dict
         
