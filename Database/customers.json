@@ -9,14 +9,8 @@
         "province": "Ontario",
         "postalCode": "M1LOG5"
     },
-    "phoneNumber": [
-    
-        {
-          "number": "646 555-467"
-        }
-    ],
-
-        "email": "johnsmith@gmail.com"   
+    "phoneNumber": "646 555-467",
+    "email": "johnsmith@gmail.com"   
 },
 
 {
@@ -30,14 +24,8 @@
         "province": "London",
         "postalCode": "M1NOI5"
     },
-    "phoneNumber": [
-    
-        {
-          "number": "646 555-467"
-        }
-    ],
-
-        "email": "johnsmith@gmail.com"   
+    "phoneNumber": "646 555-467",
+    "email": "johnsmith@gmail.com"   
 },
 
 {
@@ -50,11 +38,7 @@
       "state": "California",
       "postalCode": "90001"
     },
-    "phoneNumber": [
-      {
-        "number": "310-555-5678"
-      }
-    ],
+    "phoneNumber": "310-555-5678",
     "email": "bob.miller@gmail.com"
   },
 
@@ -69,11 +53,7 @@
       "state": "Illinois",
       "postalCode": "60601"
     },
-    "phoneNumber": [
-      {
-        "number": "312-555-6789"
-      }
-    ],
+    "phoneNumber":"312-555-6789",
     "email": "charlie.davis@gmail.com"
   },
 
@@ -88,11 +68,7 @@
       "state": "California",
       "postalCode": "94101"
     },
-    "phoneNumber": [
-      {
-        "number": "415-555-8901"
-      }
-    ],
+    "phoneNumber": "415-555-8901",
     "email": "david.wilson@gmail.com"
   },
 
@@ -107,11 +83,7 @@
       "state": "Washington",
       "postalCode": "98101"
     },
-    "phoneNumber": [
-      {
-        "number": "206-555-2345"
-      }
-    ],
+    "phoneNumber": "206-555-2345",
     "email": "emily.taylor@gmail.com"
   },
 
@@ -126,11 +98,7 @@
       "state": "Texas",
       "postalCode": "75201"
     },
-    "phoneNumber": [
-      {
-        "number": "214-555-6789"
-      }
-    ],
+    "phoneNumber": "214-555-6789",
     "email": "frank.anderson@gmail.com"
   },
 
@@ -145,11 +113,7 @@
       "state": "Florida",
       "postalCode": "33101"
     },
-    "phoneNumber": [
-      {
-        "number": "305-555-7890"
-      }
-    ],
+    "phoneNumber": "305-555-7890",
     "email": "grace.martinez@gmail.com"
   },
 
@@ -164,11 +128,7 @@
       "state": "Texas",
       "postalCode": "77001"
     },
-    "phoneNumber": [
-      {
-        "number": "713-555-1234"
-      }
-    ],
+    "phoneNumber": "713-555-1234",
     "email": "henry.garcia@gmail.com"
   },
 
@@ -183,11 +143,7 @@
       "state": "Georgia",
       "postalCode": "30301"
     },
-    "phoneNumber": [
-      {
-        "number": "404-555-5678"
-      }
-    ],
+    "phoneNumber": "404-555-5678",
     "email": "ivy.lopez@gmail.com"
   },
 
@@ -202,11 +158,7 @@
       "state": "Arizona",
       "postalCode": "85001"
     },
-    "phoneNumber": [
-      {
-        "number": "602-555-8901"
-      }
-    ],
+    "phoneNumber": "602-555-8901",
     "email": "jack.hernandez@gmail.com"
   },
 
@@ -221,11 +173,7 @@
       "state": "Massachusetts",
       "postalCode": "02101"
     },
-    "phoneNumber": [
-      {
-        "number": "617-555-2345"
-      }
-    ],
+    "phoneNumber": "617-555-2345",
     "email": "katie.young@gmail.com"
   },
 
@@ -240,11 +188,7 @@
       "state": "Colorado",
       "postalCode": "80201"
     },
-    "phoneNumber": [
-      {
-        "number": "303-555-6789"
-      }
-    ],
+    "phoneNumber": "303-555-6789",
     "email": "liam.lee@gmail.com"
   },
 
@@ -259,11 +203,7 @@
       "state": "Pennsylvania",
       "postalCode": "19101"
     },
-    "phoneNumber": [
-      {
-        "number": "215-555-1234"
-      }
-    ],
+    "phoneNumber": "215-555-1234",
     "email": "mia.king@gmail.com"
   },
 
@@ -278,11 +218,7 @@
       "state": "Michigan",
       "postalCode": "48201"
     },
-    "phoneNumber": [
-      {
-        "number": "313-555-5678"
-      }
-    ],
+    "phoneNumber": "313-555-5678",
     "email": "noah.wright@gmail.com"
   },
 
@@ -297,11 +233,7 @@
       "state": "Minnesota",
       "postalCode": "55401"
     },
-    "phoneNumber": [
-      {
-        "number": "612-555-8901"
-      }
-    ],
+    "phoneNumber": "612-555-8901",
     "email": "olivia.adams@gmail.com"
   },
 
@@ -316,11 +248,7 @@
       "state": "Texas",
       "postalCode": "78201"
     },
-    "phoneNumber": [
-      {
-        "number": "210-555-2345"
-      }
-    ],
+    "phoneNumber": "210-555-2345",
     "email": "peter.perez@gmail.com"
   },
 
@@ -335,11 +263,7 @@
       "state": "California",
       "postalCode": "92101"
     },
-    "phoneNumber": [
-      {
-        "number": "619-555-6789"
-      }
-    ],
+    "phoneNumber": "619-555-6789",
     "email": "quinn.gonzalez@gmail.com"
   },
 
@@ -354,11 +278,7 @@
       "state": "Florida",
       "postalCode": "32801"
     },
-    "phoneNumber": [
-      {
-        "number": "407-555-1234"
-      }
-    ],
+    "phoneNumber": "407-555-1234",
     "email": "ryan.rodriguez@gmail.com"
   },
 
@@ -373,11 +293,7 @@
       "state": "Oregon",
       "postalCode": "97201"
     },
-    "phoneNumber": [
-      {
-        "number": "503-555-5678"
-      }
-    ],
+    "phoneNumber": "503-555-5678",
     "email": "sophia.hernandez@gmail.com"
   },
 
@@ -392,11 +308,7 @@
       "state": "Texas",
       "postalCode": "78701"
     },
-    "phoneNumber": [
-      {
-        "number": "512-555-8901"
-      }
-    ],
+    "phoneNumber": "512-555-8901",
     "email": "thomas.lopez@gmail.com"
   },
 
@@ -411,11 +323,7 @@
       "state": "Tennessee",
       "postalCode": "37201"
     },
-    "phoneNumber": [
-      {
-        "number": "615-555-2345"
-      }
-    ],
+    "phoneNumber": "615-555-2345",
     "email": "uma.chavez@gmail.com"
   },
 
@@ -430,11 +338,7 @@
       "state": "North Carolina",
       "postalCode": "28201"
     },
-    "phoneNumber": [
-      {
-        "number": "704-555-6789"
-      }
-    ],
+    "phoneNumber": "704-555-6789",
     "email": "vincent.nguyen@gmail.com"
   },
 
@@ -449,11 +353,7 @@
       "state": "Nevada",
       "postalCode": "89101"
     },
-    "phoneNumber": [
-      {
-        "number": "702-555-1234"
-      }
-    ],
+    "phoneNumber": "702-555-1234",
     "email": "wendy.kim@gmail.com"
   },
 
@@ -468,11 +368,7 @@
       "state": "Indiana",
       "postalCode": "46201"
     },
-    "phoneNumber": [
-      {
-        "number": "317-555-5678"
-      }
-    ],
+    "phoneNumber": "317-555-5678",
     "email": "xavier.patel@gmail.com"
   },
 
@@ -487,11 +383,7 @@
       "state": "North Carolina",
       "postalCode": "27601"
     },
-    "phoneNumber": [
-      {
-        "number": "919-555-8901"
-      }
-    ],
+    "phoneNumber": "919-555-8901",
     "email": "yara.singh@gmail.com"
   },
   
@@ -505,11 +397,7 @@
       "state": "Utah",
       "postalCode": "84101"
     },
-    "phoneNumber": [
-      {
-        "number": "801-555-2345"
-      }
-    ],
+    "phoneNumber": "801-555-2345",
     "email": "zachary.gomez@gmail.com"
   }
 
