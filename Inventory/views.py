@@ -35,6 +35,7 @@ def addProduct(request):
         "product_status":request.POST['status'],
         "quantity":request.POST['productQuantity'],
         "price":request.POST['productPrice'],
+        "product_image":request.POST['productImage']
     }
     record=Product(record)
     record = json.loads(json.dumps(record.__dict__)) #converting the object to a string first then to a dict

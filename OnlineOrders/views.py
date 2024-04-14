@@ -29,7 +29,6 @@ def OnlineOrders(request):
             if product_details:
                 item['product_name'] = product_details.get('product_name', 'Unknown')
                 item['available_quantity'] = product_details.get('quantity', 0)
-    print(online_orders1)
     return render(request, 'OnlineOrders.html', {'online_orders': online_orders1})
 
 
@@ -58,10 +57,6 @@ def orderShipped(request):
     for document in updatedRowsList:
         record = OnlineOrder(document['order_id'],document['customer_name'],document['status'])
         record = json.loads(json.dumps(record.__dict__)) #converting the object to a string first then to a dict
-        print('record')
-        print(record)
-        print('document')
-        print(document)
         product_numbers = online_orders.find({'order_id':int(record['order_id'])})
         order_items=[]
         for items in product_numbers:
@@ -84,9 +79,7 @@ def orderShipped(request):
     return HttpResponse("request")
 
 def cancelOrders(request):
-    print(str(request))
     updatedRowsList=handle_ajax_request(request)
-    print(updatedRowsList)
     for document in updatedRowsList:
         record = OnlineOrder(document['order_id'],document['customer_name'],document['status'])
         record = json.loads(json.dumps(record.__dict__)) #converting the object to a string first then to a dict

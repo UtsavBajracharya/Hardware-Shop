@@ -11,20 +11,27 @@ import random
 
 def lowInventory(request):
     query = {
-    'quantity': {
-          '$lt': 8
+        'quantity': {
+            '$lt': 8
+        }
     }
-}
-    threshold_data_1=threshold_data.find()
-    product_ids=[]
+    threshold_data_1 = threshold_data.find()
+    product_ids = []
     for item in threshold_data_1:
-        if item['threshold_quantity']<item['available_quantity']:
+        if item['threshold_quantity'] < item['available_quantity']:
             product_ids.append(item['product_id'])
     inventory_data_1 = inventory_data.find(query)
     print('product_ids')
     print(product_ids)
+
+    less_qty_product = []
+    ordered_product = product_orders_data.find()
+    for data in inventory_data_1:
+        if data['product_id'] not in ordered_product:
+            less_qty_product.append(data)
+
     # still working here April 13, 9.45 AM
-    return render(request,'LowInventory.html',{'inventory_data':list(inventory_data_1)})
+    return render(request,'LowInventory.html',{'inventory_data':list(less_qty_product)})
 
 def setThreshold():
 
