@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .search-container {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .table-container {
+            margin: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            /* Gray border */
+            padding: 5px;
+            /* Padding inside cells */
+        }
+
+        /* Apply specific styles to table cells */
+        td:nth-child(1) {
+            width: 190px;
+            overflow: auto;
+        }
+
+        td:nth-child(2) {
+            width: 100px;
+            overflow: auto;
+        }
+
+        td:nth-child(3) {
+            width: 200px;
+            overflow: auto;
+        }
+
+        td:nth-child(4) {
+            min-width: 10px;
+            max-width: 130px;
+            overflow: auto;
+        }
+
+        td:nth-child(5) {
+            min-width: 150px;
+            max-width: 200px;
+            overflow: hidden;
+        }
+
+        td:nth-child(6),
+        td:nth-child(7) {
+            min-width: 100px;
+            max-width: 150px;
+            overflow: hidden;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .form-container [type="text"],
+        input[type="number"] {
+            padding: 10px;
+            margin: 5px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: calc(100% - 500px);
+            /* Adjusted width for input fields */
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            /* Adjust the width as needed */
+            margin-right: 20px;
+            /* Adjust the value to control spacing */
+            text-align: right;
+            /* Align label text to the right */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 10px;
+            /* Added margin */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 200px;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .form-container-operations {
+            text-align: center;
+            color: aqua;
+        }
+
+        .operations {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 10px;
+            /* Added margin */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        .operations button:hover {
+            background-color: #45a049;
+        }
+
+        #donutChart {
+            padding: 10px;
+            position: relative;
+            left: 35%;
+        }
+    </style>
+
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Sales Report</h1>
+    </header>
+    <nav>
+        <a href="LandingPage">Home</a>
+        <a href="Inventory">Inventory</a>
+        <a href="OnlineOrders">Online Orders</a>
+        <a href="ProductOrders">Product Orders</a>
+        <a href="LowInventory">Low Inventory</a>
+        <a href="Sales">Sales</a>
+        <a href="Prediction">Prediction</a>
+        <a href="Contact">Contact</a>
+    </nav>
+
+    <div class="table-container" id="tableContainer">
+        <table id="inventoryTable">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>SKU</th>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Status</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Gross Total</th>
+                    <th>Discount</th>
+                    <th>Net Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in sold_product %}
+                <tr>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.product_id }}</td>
+                    <td>{{ item.product_name }}</td>
+                    <td>{{ item.size }}</td>
+                    <td>{{ item.product_status }}</td>
+                    <td>{{ item.ordered_quantity }}</td>
+                    <td>$ {{ item.price }}</td>
+                    <td>$ {{ item.grossTotal}}</td>
+                    <td>$ {{ item.discount }}</td>
+                    <td>$ {{ item.netTotal }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <canvas id="donutChart" width="400" height="400"></canvas>
+
+</body>
+<script>
+    function searchInventory() {
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        table = document.getElementById('inventoryTable');
+        tr = table.getElementsByTagName('tr');
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName('td');
+            var found = false;
+            for (j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = '';
+                        break;
+                    } else {
+                        tr[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+    }
+
+    // Data for the donut chart
+    var data = [];
+    // Get the table element
+    var table = document.getElementById("inventoryTable");
+
+    // Get the table rows
+    var rows = table.getElementsByTagName("tr");
+
+    // Initialize an array to store the dictionaries
+    var dataList = [];
+
+    // Loop through each row (skipping the header row)
+    for (var i = 1; i < rows.length; i++) {
+        var row = rows[i];
+        var cells = row.getElementsByTagName("td");
+
+        // Initialize an object to store cell data
+        var rowData = {};
+
+        // Loop through each cell in the row and extract data
+        for (var j = 0; j < cells.length; j++) {
+            var cell = cells[j];
+            var columnHeader = table.rows[0].cells[j].textContent.trim(); // Get the column header text
+            var cellData = cell.textContent.trim();
+
+            // Add cell data to the row object
+            rowData[columnHeader] = cellData;
+        }
+
+        // Add the row object to the list
+        dataList.push(rowData);
+    }
+
+    for (var i = 0; i < dataList.length; i++) {
+        data.push({
+            "product_name": dataList[i].Name,
+            "ordered_quantity": dataList[i].Quantity
+        })
+    }
+
+    // Extract product names and quantities
+    var labels = data.map(item => item.product_name);
+    var quantities = data.map(item => item.ordered_quantity);
+
+    // Create the donut chart
+    var ctx = document.getElementById('donutChart').getContext('2d');
+    var donutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Sold Quantity',
+                data: quantities,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)',
+                    'rgba(255, 159, 64, 0.5)',
+                    'rgba(255, 0, 255, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 0, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: false,
+            legend: {
+                position: 'bottom'
+            },
+            title: {
+                display: true,
+                text: 'Ordered Quantity by Product'
+            },
+            animation: {
+                animateRotate: true,
+                animateScale: true
+            }
+        }
+    });
+</script>
+
+</html>

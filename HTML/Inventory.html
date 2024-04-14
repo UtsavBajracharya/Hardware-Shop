@@ -159,7 +159,6 @@
       <a href="ProductOrders">Product Orders</a>
       <a href="LowInventory">Low Inventory</a>
       <a href="Sales">Sales</a>
-      <a href="Billing">Billing</a>
       <a href="Prediction">Prediction</a>
       <a href="Contact">Contact</a>
     </nav>
@@ -310,7 +309,6 @@
               }
               updatedData.push(rowData);
           });
-          console.log(updatedData)
           // Send updated data to the server
           var xhr = new XMLHttpRequest();
           xhr.open("POST", "/AdminLogin/update_selected_rows", true);

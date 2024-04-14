@@ -2,8 +2,9 @@ from contextlib import nullcontext
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def Billing(request):
-    return render(request, 'Billing.html')
+# def Billing(request):
+#     return render(request, 'Billing.html')
+
 def Dashboard(request):
     return render(request, 'Dashboard.html')
 def LandingPage(request):

@@ -32,7 +32,8 @@
     "status": "Pending",
     "estimated_arrival": "2024-04-22",
     "ordered_quantity": 5,
-    "price": 9.99
+    "price": 9.99,
+    "order_id": 20003
   },
   {
     "product_id": 1000077,
@@ -43,7 +44,8 @@
     "estimated_arrival": "2024-04-23",
     "ordered_quantity": 4,
     "price": 14.99,
-    "ordered_date": "2024-04-13"
+    "ordered_date": "2024-04-13",
+    "order_id": 20004
   },
   {
     "product_id": 1000078,
@@ -54,6 +56,7 @@
     "ordered_quantity": 1,
     "price": 19.99,
     "vendor": "Vendor Y",
-    "ordered_date": "2024-04-14"
+    "ordered_date": "2024-04-14",
+    "order_id": 20005
   }
 ]
