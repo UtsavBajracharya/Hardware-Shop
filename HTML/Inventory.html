@@ -60,20 +60,25 @@
     overflow: auto; /* Hide overflow content */
   }
 
-  td:nth-child(3) { /* Name */
-    min-width: 200px; /* Minimum width */
-    max-width: 300px; /* Maximum width */
+  td:nth-child(3) { /* Product Image*/
+    width: 200px; /* width */
+    overflow: auto; /* Hide overflow content */
+  }
+
+  td:nth-child(4) { /* Name */
+    min-width: 10px; /* Minimum width */
+    max-width: 130px; /* Maximum width */
     overflow: auto; /* Enable overflow scrolling */
   }
 
-  td:nth-child(4) { /* Category */
+  td:nth-child(5) { /* Category */
     min-width: 150px; /* Minimum width */
     max-width: 200px; /* Maximum width */
     overflow: hidden; /* Hide overflow content */
   }
 
-  td:nth-child(5), /* Quantity */
-  td:nth-child(6) { /* Price */
+  td:nth-child(6), /* Quantity */
+  td:nth-child(7) { /* Price */
     min-width: 100px; /* Minimum width */
     max-width: 150px; /* Maximum width */
     overflow: hidden; /* Hide overflow content */
@@ -190,7 +195,9 @@
         <label for="productQuantity">Product Quantity:</label>
         <input type="number" id="productQuantity" name="productQuantity" required><br>
         <label for="productPrice">Product Price:</label>
-        <input type="number" id="productPrice" name="productPrice" required><br><br>
+        <input type="number" id="productPrice" name="productPrice" required><br>
+        <label for="productPrice">Discount Amount:</label>
+        <input type="number" id="discount" name="discount" required><br><br>
         <div class="form-container-operations"><input type="submit" value="Add">
         <button onclick="goBack()">Cancel</button>
         </div>
@@ -213,6 +220,7 @@
             <th>Status</th>
             <th>Quantity</th>
             <th>Price</th>
+            <th>Discount</th>
           </tr>
         </thead>
         <tbody>
@@ -220,7 +228,7 @@
             <tr>
               <td><input type="checkbox"></td>
               <td onclick="editField(this)">{{ item.product_id }}</td>
-              <td><img style="width: 30%;" src="{{ item.product_image }}"></td>
+              <td onclick="editField(this)"><img style="width: 70%;" src={{ item.product_image }}></td>
               <td onclick="editField(this)">{{ item.product_name }}</td>
               <td onclick="editField(this)">{{ item.description }}</td>
               <td onclick="editField(this)">{{ item.category }}</td>
@@ -229,6 +237,7 @@
               <td onclick="editField(this)">{{ item.product_status }}</td>
               <td onclick="editField(this)">{{ item.quantity }}</td>
               <td onclick="editField(this)">$ {{ item.price }}</td>
+              <td onclick="editField(this)">$ {{ item.discount }}</td>
             </tr>
           {% endfor %}
         </tbody>
@@ -286,14 +295,25 @@
                   // Skip the first cell as it's for the checkbox
                   var header = inventoryTable.rows[0].cells[i].textContent.trim();
                   var value = cells[i].textContent.trim();
-                  rowData[header] = value;
+
+                  if(header == 'Image') {
+                    if(cells[i].textContent.trim() == ''){
+                      rowData[header] = cells[i].childNodes[0].src;
+                    }
+                    else{
+                      rowData[header] = cells[i].textContent.trim();
+                    } 
+                  }
+                  else {
+                    rowData[header] = value;
+                  }
               }
               updatedData.push(rowData);
           });
-  
+          console.log(updatedData)
           // Send updated data to the server
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "/update_selected_rows", true);
+          xhr.open("POST", "/AdminLogin/update_selected_rows", true);
           xhr.setRequestHeader("Content-Type", "application/json");
 
           xhr.send(JSON.stringify(updatedData));
@@ -328,7 +348,7 @@
 
             // Send updated data to the server
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/delete_selected_rows", true);
+            xhr.open("POST", "/AdminLogin/delete_selected_rows", true);
             xhr.setRequestHeader("Content-Type", "application/json");
 
             xhr.send(JSON.stringify(updatedData));
