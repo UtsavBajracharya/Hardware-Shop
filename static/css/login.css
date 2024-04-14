@@ -18,15 +18,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 30%;
+  max-width: 25%;
   /* margin-top: 50%; */
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
   background-color: #bfdad8;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Logo styling */
 .logo {
@@ -42,6 +41,7 @@ body {
 .form-group {
     margin-bottom: 15px;
 }
+
 input[type="text"],
 input[type="password"] {
     width: 100%;
@@ -49,6 +49,7 @@ input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 
 /* Login button */
 button {
@@ -60,6 +61,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 8px;
     margin-bottom: 20px;
 }
 button:hover {
