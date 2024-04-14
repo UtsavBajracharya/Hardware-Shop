@@ -17,6 +17,8 @@ class Product:
         # Remove the dollar sign ('$') and convert the price to float
         self.price = float(json_data['price'].replace('$', '').strip())
         self.product_status = json_data['product_status'].strip()
+        self.product_image = json_data['product_image'].strip()
+        self.discount = float(json_data['discount'].replace('$', '').strip())
 
 
 
@@ -35,7 +37,8 @@ def addProduct(request):
         "product_status":request.POST['status'],
         "quantity":request.POST['productQuantity'],
         "price":request.POST['productPrice'],
-        "product_image":request.POST['productImage']
+        "product_image":request.POST['productImage'],
+        "discount":request.POST['discount']
     }
     record=Product(record)
     record = json.loads(json.dumps(record.__dict__)) #converting the object to a string first then to a dict
@@ -83,7 +86,7 @@ def handle_ajax_request(request):
 
         # Parse the JSON string into a Python data structure
         data = json.loads(json_string)
-        print(len)
+        print(data)
         # Iterate through the data
         updatedRowsList = []
         for item in data:
@@ -97,6 +100,8 @@ def handle_ajax_request(request):
         "product_status":item['Status'],
         "quantity":item['Quantity'],
         "price":item['Price'],
+        "discount":item['Discount'],
+        "product_image":item['Image'],
     }
             updatedRowsList.append(record)
 

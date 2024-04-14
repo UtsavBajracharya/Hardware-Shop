@@ -60,24 +60,29 @@ td:nth-child(2) { /* Product Number */
   overflow: auto; /* Hide overflow content */
 }
 
-td:nth-child(3) { /* Name */
-  min-width: 200px; /* Minimum width */
-  max-width: 300px; /* Maximum width */
-  overflow: auto; /* Enable overflow scrolling */
-}
+td:nth-child(3) { /* Product Image*/
+    width: 200px; /* width */
+    overflow: auto; /* Hide overflow content */
+  }
 
-td:nth-child(4) { /* Category */
-  min-width: 150px; /* Minimum width */
-  max-width: 200px; /* Maximum width */
-  overflow: hidden; /* Hide overflow content */
-}
+  td:nth-child(4) { /* Name */
+    min-width: 10px; /* Minimum width */
+    max-width: 130px; /* Maximum width */
+    overflow: auto; /* Enable overflow scrolling */
+  }
 
-td:nth-child(5), /* Quantity */
-td:nth-child(6) { /* Price */
-  min-width: 100px; /* Minimum width */
-  max-width: 150px; /* Maximum width */
-  overflow: hidden; /* Hide overflow content */
-}
+  td:nth-child(5) { /* Category */
+    min-width: 150px; /* Minimum width */
+    max-width: 200px; /* Maximum width */
+    overflow: hidden; /* Hide overflow content */
+  }
+
+  td:nth-child(6), /* Quantity */
+  td:nth-child(7) { /* Price */
+    min-width: 100px; /* Minimum width */
+    max-width: 150px; /* Maximum width */
+    overflow: hidden; /* Hide overflow content */
+  }
 
     tr:nth-child(even) {
       background-color: #f2f2f2;
@@ -175,6 +180,7 @@ td:nth-child(6) { /* Price */
         <tr>
           <th>Select</th>
           <th>SKU</th>
+          <th>Image</th>
           <th>Name</th>
           <th>Description</th>
           <th>Category</th>
@@ -191,6 +197,7 @@ td:nth-child(6) { /* Price */
           <tr>
             <td><input type="checkbox"></td>
             <td onclick="editField(this)">{{ item.product_id }}</td>
+            <td onclick="editField(this)"><img style="width: 70%;" src={{ item.product_image }}></td>
             <td onclick="editField(this)">{{ item.product_name }}</td>
             <td onclick="editField(this)">{{ item.description }}</td>
             <td onclick="editField(this)">{{ item.category }}</td>

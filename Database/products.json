@@ -9,7 +9,8 @@
     "color": "Orange and Black",
     "price": 69.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61bpiSCgTzL._AC_SL1000_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61bpiSCgTzL._AC_SL1000_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000013,
@@ -21,7 +22,8 @@
     "color": "Yellow",
     "price": 49.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71LHxcfgt8L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71LHxcfgt8L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000014,
@@ -33,7 +35,8 @@
     "color": "Red",
     "price": 199.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71daKNJpkXL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71daKNJpkXL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000015,
@@ -45,7 +48,8 @@
     "color": "Blue",
     "price": 149.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71CM6R1O7fL._SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71CM6R1O7fL._SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000016,
@@ -57,7 +61,8 @@
     "color": "Silver",
     "price": 39.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61fTXvjjd+L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61fTXvjjd+L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000017,
@@ -69,7 +74,8 @@
     "color": "Yellow",
     "price": 49.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61qeJN6+ZiL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61qeJN6+ZiL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000018,
@@ -81,7 +87,8 @@
     "color": "Red",
     "price": 89.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61JJMDY2NwL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61JJMDY2NwL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000019,
@@ -93,7 +100,8 @@
     "color": "Black",
     "price": 99.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61fTXvjjd+L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61fTXvjjd+L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000020,
@@ -105,7 +113,8 @@
     "color": "Orange",
     "price": 149.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/51z1jxJulqL._SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/51z1jxJulqL._SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000021,
@@ -117,7 +126,8 @@
     "color": "Blue",
     "price": 14.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/614JtBabq7L._AC_SL1486_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/614JtBabq7L._AC_SL1486_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000022,
@@ -129,7 +139,8 @@
     "color": "Brown",
     "price": 9.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71V5tR1QAlL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71V5tR1QAlL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000023,
@@ -141,7 +152,8 @@
     "color": "Black and Yellow",
     "price": 69.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61YxmTpEweL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61YxmTpEweL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000024,
@@ -153,7 +165,8 @@
     "color": "White",
     "price": 19.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61ygBdmnTpL.__AC_SX300_SY300_QL70_ML2_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61ygBdmnTpL.__AC_SX300_SY300_QL70_ML2_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000025,
@@ -165,7 +178,8 @@
     "color": "Blue",
     "price": 7.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/514-SuR8o+L._SX342_SY445_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/514-SuR8o+L._SX342_SY445_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000026,
@@ -177,7 +191,8 @@
     "color": "Black",
     "price": 5.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/610K2ehJIsL.__AC_SX300_SY300_QL70_ML2_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/610K2ehJIsL.__AC_SX300_SY300_QL70_ML2_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000027,
@@ -189,7 +204,8 @@
     "color": "Green",
     "price": 149.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61WJ8NU6VAL._AC_SL1181_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61WJ8NU6VAL._AC_SL1181_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000028,
@@ -201,7 +217,8 @@
     "color": "Red and Black",
     "price": 79.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61hGGTUkt5L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61hGGTUkt5L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000029,
@@ -213,7 +230,8 @@
     "color": "Gray and Black",
     "price": 29.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61Oim8wHtkL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61Oim8wHtkL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000030,
@@ -225,7 +243,8 @@
     "color": "Blue",
     "price": 34.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/818kE2HzcJL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/818kE2HzcJL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000031,
@@ -237,7 +256,8 @@
     "color": "Assorted",
     "price": 12.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/81nOsL9jLsL.__AC_SX300_SY300_QL70_ML2_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/81nOsL9jLsL.__AC_SX300_SY300_QL70_ML2_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000032,
@@ -249,7 +269,8 @@
     "color": "Black",
     "price": 16.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61tBbwWAf9L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61tBbwWAf9L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000033,
@@ -261,7 +282,8 @@
     "color": "Green",
     "price": 29.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/815z10B5bOL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/815z10B5bOL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000034,
@@ -273,7 +295,8 @@
     "color": "Red and Black",
     "price": 12.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71N9JNtg+iL._SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71N9JNtg+iL._SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000035,
@@ -285,7 +308,8 @@
     "color": "Brown",
     "price": 17.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61uj5EfBlTL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61uj5EfBlTL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000036,
@@ -297,7 +321,8 @@
     "color": "Brown",
     "price": 14.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61VeNbA4ocL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61VeNbA4ocL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000037,
@@ -309,7 +334,8 @@
     "color": "Green",
     "price": 9.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/818z65G+0dL._AC_SX679_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/818z65G+0dL._AC_SX679_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000038,
@@ -321,7 +347,8 @@
     "color": "Black and Orange",
     "price": 59.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61yF3JomPsL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61yF3JomPsL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000039,
@@ -333,7 +360,8 @@
     "color": "Green and Black",
     "price": 49.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61LiDn3FA0L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61LiDn3FA0L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000040,
@@ -345,7 +373,8 @@
     "color": "Green",
     "price": 79.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71fFNm7e5SL._SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71fFNm7e5SL._SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000041,
@@ -357,7 +386,8 @@
     "color": "Silver",
     "price": 7.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61zlmlxIqPL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61zlmlxIqPL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000042,
@@ -369,7 +399,8 @@
     "color": "Brown",
     "price": 19.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61K67Fv-qBL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61K67Fv-qBL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000043,
@@ -381,7 +412,8 @@
     "color": "Assorted",
     "price": 12.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/81CjomHnM3L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/81CjomHnM3L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000044,
@@ -393,7 +425,8 @@
     "color": "White and Black",
     "price": 24.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/610JIZy1EjL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/610JIZy1EjL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000045,
@@ -405,7 +438,8 @@
     "color": "Green",
     "price": 89.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61K+6wfeDOL._AC_SL1000_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61K+6wfeDOL._AC_SL1000_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000046,
@@ -417,7 +451,8 @@
     "color": "Blue and Silver",
     "price": 9.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71QqBRojA7L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71QqBRojA7L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000047,
@@ -429,7 +464,8 @@
     "color": "Green",
     "price": 14.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61jTQpx6w0L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61jTQpx6w0L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000048,
@@ -441,7 +477,8 @@
     "color": "Black",
     "price": 19.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71Vgk4Fi7yL._SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71Vgk4Fi7yL._SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000049,
@@ -453,7 +490,8 @@
     "color": "Green",
     "price": 9.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71kBnMUQLfL._AC_SX679_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71kBnMUQLfL._AC_SX679_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000050,
@@ -465,7 +503,8 @@
     "color": "Black and Orange",
     "price": 199.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71Ni1Q+jOmL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71Ni1Q+jOmL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000051,
@@ -477,7 +516,8 @@
     "color": "Green and Black",
     "price": 49.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71BBIzOvm8S._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71BBIzOvm8S._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000052,
@@ -489,7 +529,8 @@
     "color": "Yellow",
     "price": 12.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/81Xc5ExcHHL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/81Xc5ExcHHL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000053,
@@ -501,7 +542,8 @@
     "color": "Black and Orange",
     "price": 99.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61nuPCv05KL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61nuPCv05KL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000054,
@@ -513,7 +555,8 @@
     "color": "White",
     "price": 39.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71J2Tdmr5oL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71J2Tdmr5oL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000055,
@@ -525,7 +568,8 @@
     "color": "Green",
     "price": 29.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/91624cnFreL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/91624cnFreL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000056,
@@ -537,7 +581,8 @@
     "color": "Green",
     "price": 14.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61gBHNmYIoL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61gBHNmYIoL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000057,
@@ -549,7 +594,8 @@
     "color": "Green",
     "price": 19.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/717rfUmgOhL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/717rfUmgOhL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000058,
@@ -561,7 +607,8 @@
     "color": "Brown",
     "price": 16.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/A1IUzTG2TJL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/A1IUzTG2TJL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000059,
@@ -573,7 +620,8 @@
     "color": "White",
     "price": 9.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71a7JcOev6L._AC_SL1428_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71a7JcOev6L._AC_SL1428_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000060,
@@ -585,7 +633,8 @@
     "color": "Green",
     "price": 79.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61EenQGGbML._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61EenQGGbML._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000061,
@@ -597,7 +646,8 @@
     "color": "Green",
     "price": 99.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/51q7O6yuNAL._AC_SL1000_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/51q7O6yuNAL._AC_SL1000_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000062,
@@ -609,7 +659,8 @@
     "color": "Green",
     "price": 29.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71XKdzJUWeL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71XKdzJUWeL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000063,
@@ -621,7 +672,8 @@
     "color": "Green",
     "price": 39.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/91qFY3-tD9L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/91qFY3-tD9L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000064,
@@ -633,7 +685,8 @@
     "color": "Black",
     "price": 19.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/81GNxWXBkfL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/81GNxWXBkfL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000065,
@@ -645,7 +698,8 @@
     "color": "Green",
     "price": 89.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61hqMAn7rFL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61hqMAn7rFL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000066,
@@ -657,7 +711,8 @@
     "color": "Gray",
     "price": 49.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71Tg+Gt5JgL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71Tg+Gt5JgL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000067,
@@ -669,7 +724,8 @@
     "color": "Black",
     "price": 39.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/81lwOxOHT2L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/81lwOxOHT2L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000068,
@@ -681,7 +737,8 @@
     "color": "Black",
     "price": 29.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71fZRd15L5L._SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71fZRd15L5L._SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000069,
@@ -693,7 +750,8 @@
     "color": "Black",
     "price": 24.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71bhoJ7zYSL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71bhoJ7zYSL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000070,
@@ -705,7 +763,8 @@
     "color": "Clear",
     "price": 5.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/41emacv+3DL._AC_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/41emacv+3DL._AC_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000071,
@@ -717,7 +776,8 @@
     "color": "Green",
     "price": 19.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61LQDW24RLL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61LQDW24RLL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000072,
@@ -729,7 +789,8 @@
     "color": "Black",
     "price": 9.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/516MPjFfjKL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/516MPjFfjKL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000073,
@@ -741,7 +802,8 @@
     "color": "White and Black",
     "price": 24.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/71Y6ugSMU5L._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/71Y6ugSMU5L._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000074,
@@ -753,7 +815,8 @@
     "color": "Green",
     "price": 99.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61S9dj6KVEL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61S9dj6KVEL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000075,
@@ -765,7 +828,8 @@
     "color": "Blue",
     "price": 14.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/51eyjky8gTL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/51eyjky8gTL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000076,
@@ -777,7 +841,8 @@
     "color": "Green",
     "price": 9.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/813Id2hFdsL._AC_SX679_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/813Id2hFdsL._AC_SX679_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000077,
@@ -789,7 +854,8 @@
     "color": "Green",
     "price": 14.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/817+yLb1BeL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/817+yLb1BeL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000078,
@@ -801,7 +867,8 @@
     "color": "Brown and Silver",
     "price": 19.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61WqF3o4LWL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61WqF3o4LWL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000079,
@@ -813,7 +880,8 @@
     "color": "Green",
     "price": 7.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/81ZG1hOYmOL._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/81ZG1hOYmOL._AC_SL1500_.jpg",
+    "discount": 0
   },
   {
     "product_id": 1000080,
@@ -825,6 +893,7 @@
     "color": "Green",
     "price": 9.99,
     "product_status": "Available",
-    "product_image": "https://m.media-amazon.com/images/I/61pU3xFXb9S._AC_SL1500_.jpg"
+    "product_image": "https://m.media-amazon.com/images/I/61pU3xFXb9S._AC_SL1500_.jpg",
+    "discount": 0
   }
 ]
