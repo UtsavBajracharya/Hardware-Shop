@@ -39,7 +39,5 @@ def setThreshold(request):
     # threshold_product_data = threshold_data.find()
     # for item in threshold_product_data:
     #     product_numbers.append(item["product_id"])
-    # print("RAAAHUL")
-    # print(product_numbers)  
     # # if product_id 
     return HttpResponse("Updated")

@@ -30,16 +30,11 @@ class ProductOrder:
 
 def fetchProduct(request):
     product_id = str(request.body.decode('utf-8')).strip('"')
-    print('product_id')
-    print(product_id)
     product = list(inventory_data.find({'product_id':int(product_id)}))[0]
     vendor=vendors.find()
     vendor_names=[]
     for item in vendor:
         vendor_names.append(item['vendor_name'])
-    print('vendor')
-    print(list(vendor))
-    print(vendor_names)
     vend= list(vendor_names)
 
     data = {
@@ -54,8 +49,6 @@ def fetchProduct(request):
         "Price": product['price'],
         "vendor":vend
     }
-    print('data')
-    print(data)
     return JsonResponse(data)
 
 
@@ -65,27 +58,25 @@ def fetchProduct(request):
 
 def recieveOrders(request):
     updatedRowsList=handle_ajax_request(request)
-    print(updatedRowsList)
     for document in updatedRowsList:
         record = ProductOrder(document['order_id'],document['product_id'],document['product_name'],document['description'],document['ordered_date'],document['vendor'],document['status'],document['estimated_arrival'],document['ordered_quantity'],document['price'])
         record = json.loads(json.dumps(record.__dict__)) #converting the object to a string first then to a dict
         product_orders.update_one({'order_id':int(record['order_id'])},{"$set":{'status': 'Recieved'}})
        
     return HttpResponse("request")
+
 def cancelOrders(request):
     updatedRowsList=handle_ajax_request(request)
-    print(updatedRowsList)
     for document in updatedRowsList:
         record = ProductOrder(document['order_id'],document['product_id'],document['product_name'],document['description'],document['ordered_date'],document['vendor'],document['status'],document['estimated_arrival'],document['ordered_quantity'],document['price'])
         record = json.loads(json.dumps(record.__dict__)) #converting the object to a string first then to a dict
         product_orders.update_one({'order_id':int(record['order_id'])},{"$set":{'status': 'Cancelled'}})
        
     return HttpResponse("request")
+
 def generate_new_order_id():
     # Find the latest order
     latest_order = product_orders.find_one({}, sort=[('order_id', -1)])
-    print('latest_order')
-    print(latest_order)
     if latest_order:
         latest_order_id = latest_order['order_id']
         new_order_id = int(latest_order_id) + 1
@@ -99,8 +90,6 @@ def addProductOrders(request):
     # json_string = request.body.decode('utf-8')
     # query_dict = parse_qs(json_string)
     # data = json.dumps(query_dict)
-    # print('data')
-    # print(data)
     order_id=generate_new_order_id()
 
     current_date = datetime.now().date().strftime("%d-%m-%Y")

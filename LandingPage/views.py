@@ -9,7 +9,6 @@ def Login(request):
     return redirect(reverse('LandingPage')) # render(request, "LandingPage.html")
 
 def LandingPage(request):
-    print('here')
     # pending orders
     pending_orders = list(online_orders.find({"status": "Pending"}))
     for order in pending_orders:
