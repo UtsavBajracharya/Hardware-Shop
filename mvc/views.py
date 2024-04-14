@@ -20,3 +20,5 @@ def Sales(request):
     return render(request, 'Sales.html')
 def Inventory(request):
     return render(request, '.\HTML/Inventory.html')
+def Contact(request):
+    return render(request, 'Contact.html')

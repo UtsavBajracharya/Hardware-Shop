@@ -3,5 +3,5 @@ from db_connection import db
 
 # Create your models here.
 inventory_data= db['products']
-threshold_data= db['threshold']
+threshold_data= db['product_threshold']
 product_orders_data = db['product_orders']

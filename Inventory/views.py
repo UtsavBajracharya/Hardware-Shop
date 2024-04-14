@@ -6,7 +6,7 @@ import json
 # Create your views here.
 
 class Product:
-    def __init__(self, json_data):
+    def __init__(self,json_data):
         self.product_id = int(json_data['product_id'].strip())
         self.product_name = json_data['product_name'].strip()
         self.category = json_data['category'].strip()
@@ -101,7 +101,7 @@ def handle_ajax_request(request):
         "quantity":item['Quantity'],
         "price":item['Price'],
         "discount":item['Discount'],
-        "product_image":item['Image'],
+        "product_image":item['Image']
     }
             updatedRowsList.append(record)
 
@@ -119,6 +119,5 @@ def deleteProducts(request):
         record = Product(document)
         record = json.loads(json.dumps(record.__dict__)) #converting the object to a string first then to a dict
         
-        inventory_data.delete_one({'product_id':int(record['product_id'])})
-        inventory_data.delete_one({'product_id':record['product_id']})  
+        inventory_data.delete_one({'product_id':int(record['product_id'])}) or inventory_data.delete_one({'product_id':record['product_id']})  
     return HttpResponse("Deleted")

@@ -34,9 +34,8 @@ body {
     margin-bottom: 20px;
 }
 .logo img {
-    width: 100px;
-    height: auto;
-    border-radius: 50%;
+    width: 30%;
+    height: auto ;
 }
 
 /* Form input fields */
@@ -61,6 +60,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 20px;
 }
 button:hover {
     background-color: #038c5a;

@@ -161,16 +161,14 @@ td:nth-child(3) { /* Product Image*/
     <a href="Sales">Sales</a>
     <a href="Billing">Billing</a>
     <a href="Prediction">Prediction</a>
-    <a href="#">Contact</a>
+    <a href="Contact">Contact</a>
   </nav>
   <div class="search-container" id="search">
     <input type="text" id="searchInput" onkeyup="searchInventory()" placeholder="Search Low Inventory...">
   </div>
 
   <div class="operations" id="operations">
-    <button onclick="addProduct()">Add Product</button>
-    <button id="updateButton" onclick="updateProducts()" >Update Selected</button>
-    <button id="deleteButton" onclick="deleteProducts()" >Delete Selected</button>
+    <button onclick="setThreshold()">Set Threshold</button>
   </div>
 
 
@@ -178,7 +176,7 @@ td:nth-child(3) { /* Product Image*/
     <table id="inventoryTable">
       <thead>
         <tr>
-          <th>Select</th>
+          <!-- <th>Select</th> -->
           <th>SKU</th>
           <th>Image</th>
           <th>Name</th>
@@ -195,7 +193,7 @@ td:nth-child(3) { /* Product Image*/
       <tbody>
         {% for item in inventory_data %}
           <tr>
-            <td><input type="checkbox"></td>
+            <!-- <td><input type="checkbox"></td> -->
             <td onclick="editField(this)">{{ item.product_id }}</td>
             <td onclick="editField(this)"><img style="width: 70%;" src={{ item.product_image }}></td>
             <td onclick="editField(this)">{{ item.product_name }}</td>
@@ -213,7 +211,7 @@ td:nth-child(3) { /* Product Image*/
   </div>
   <div class="form-container" id="addProductForm" style="display: none;">
     <h2>Set Threshold</h2>
-    <form method="post" action="addProduct">
+    <form method="post" action="SetThreshold">
       <label for="productNumber">Product Number:</label>
       <input type="number" id="productNumber" name="productNumber" required><br>
       <label for="productName">Product Name:</label>
@@ -231,7 +229,9 @@ td:nth-child(3) { /* Product Image*/
       <label for="productQuantity">Product Quantity:</label>
       <input type="number" id="productQuantity" name="productQuantity" required><br>
       <label for="productPrice">Product Price:</label>
-      <input type="number" id="productPrice" name="productPrice" required><br><br>
+      <input type="text" id="productPrice" name="productPrice" required><br>
+      <label for="threshold_quantity">Threshold Quantity:</label>
+      <input type="number" id="thresholdQuantity" name="thresholdQuantity" required><br><br>
       <div class="form-container-operations"><input type="submit" value="Add">
       <button onclick="goBack()">Cancel</button>
       </div>
@@ -274,7 +274,7 @@ function showOrderDetails(productId) {
     }
   }
   
-  function addProduct() {
+  function setThreshold() {
     var form = document.getElementById("addProductForm");
     var tableContainer = document.getElementById("tableContainer");
     var operationsContainer = document.getElementById("operations");
@@ -299,7 +299,17 @@ function showOrderDetails(productId) {
                 // Skip the first cell as it's for the checkbox
                 var header = inventoryTable.rows[0].cells[i].textContent.trim();
                 var value = cells[i].textContent.trim();
-                rowData[header] = value;
+                if(header == 'Image') {
+                  if(cells[i].textContent.trim() == ''){
+                    rowData[header] = cells[i].childNodes[0].src;
+                  }
+                  else{
+                    rowData[header] = cells[i].textContent.trim();
+                  } 
+                }
+                else {
+                  rowData[header] = value;
+                }
             }
             updatedData.push(rowData);
         });
@@ -351,16 +361,63 @@ function deleteProducts() {
   }
 }
 
+function fetchProductData() {
+  // Fetch product data based on the product ID entered by the user
+  var productId = document.getElementById('productNumber').value;
+
+  // Example: Replace this with your actual AJAX request to fetch product data
+  // For demonstration, I'm using a dummy product object
+  var productData;
+  var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/fetchProduct", true);
+      xhr.setRequestHeader("Content-Type", "application/json")
+      xhr.onload = function() {
+          if (xhr.status >= 200 && xhr.status < 300) {
+              var response = JSON.parse(xhr.responseText);
+              console.log(response);
+              productData = response;
+              document.getElementById('productName').value = productData.Name;
+              document.getElementById('description').value = productData.Description;
+              document.getElementById('productCategory').value = productData.Category;
+              document.getElementById('size').value = productData.Size;
+              document.getElementById('color').value = productData.Color;
+              document.getElementById('status').value = productData.Status;
+              document.getElementById('productQuantity').value = productData.Quantity;
+              document.getElementById('productPrice').value = productData.Price;
+              var select = document.getElementById('vendor');
+              select.innerHTML = ''; // Clear existing options
+              productData.vendor.forEach(function(vendor) {
+                  var option = document.createElement('option');
+                  option.value = vendor;
+                  option.textContent = vendor;
+                  select.appendChild(option);
+              });
+              // Now you can use the response object
+          } else {
+              console.log('The request failed!');
+          }
+      };
+      xhr.send(JSON.stringify(productId));
+
+
+  // Populate form fields with fetched product data
+// Show the form after populating the data
+  addProductOrder();
+}
+
 
   
 
   function goBack() {
-    window.location.href = 'Inventory';
+    window.location.href = 'LowInventory';
   }
 
   document.addEventListener('DOMContentLoaded', function() {
     var inventoryTable = document.getElementById('inventoryTable');
-  
+    var productNumberInput = document.getElementById('productNumber');
+    productNumberInput.addEventListener('blur', function() {
+      fetchProductData(this.value);
+    });
     // Function to handle editing on double-click
     function editField(td) {
       var input = document.createElement("input");

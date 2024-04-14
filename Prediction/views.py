@@ -14,7 +14,7 @@ def Prediction(request):
     for item in sellers_data:
         for order in item['order_items']:
             product = products_data.find_one({"product_id": order['product_id']})
-            
+            # print(product)
             if product['category'] not in sell_categories : 
                 sell_categories.append(product['category'])
 
