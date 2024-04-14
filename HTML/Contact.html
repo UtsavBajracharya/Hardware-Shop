@@ -17,9 +17,10 @@
       height: 100%;
     }
 
-    .h2,
-    h2 {
-      font-size: 1.5rem;
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 20px 0;
     }
 
     header {
@@ -36,149 +37,126 @@
       text-align: center;
     }
 
-    nav a {
+    nav a, nav a:hover {
       color: #fff;
       text-decoration: none;
       margin: 0 10px;
     }
 
-    .hr-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-evenly;
+    /*Contact form styling starts*/
+    .contact {
+        padding: 60px 0;
+        display: flex;
     }
 
-    .icon {
-      width: 100px;
-      height: 100px;
-      text-decoration: none;
-      background-color: #90e3f7;
-      margin: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      border: #c30101;
-      border-radius: 5%;
-      text-align: center;
+    .contact .heading h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
 
     }
 
+    .contact .heading h2 span {
+        color: #4CAF50;
+    }
 
-.contact {
-    padding: 60px 0;
-    display: flex;
-}
+    .contact .heading p {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.7;
+        color: #999999;
+        margin: 20px 0 60px;
+        padding: 0;
+    }
 
-.contact .heading h2 {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-
-}
-
-.contact .heading h2 span {
-    color: #4CAF50;
-}
-
-.contact .heading p {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.7;
-    color: #999999;
-    margin: 20px 0 60px;
-    padding: 0;
-}
-
-.contact .form-control {
-    padding: 25px;
-    margin-bottom: 10px;
-    background: #f9f9f9;
-    border: 0;
-    border-radius: 10px;
-    font-size: 14px;
-}
+    .contact .form-control {
+        padding: 25px;
+        margin-bottom: 10px;
+        background: #f9f9f9;
+        border: 0;
+        border-radius: 10px;
+        font-size: 14px;
+    }
 
 
-.contact .selectoption{
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    background: #f9f9f9;
-    border: 0;
-    border-radius: 10px;
-    font-size: 14px;
-    width: 100%;
-    color: #6c757d;
+    .contact .selectoption{
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        background: #f9f9f9;
+        border: 0;
+        border-radius: 10px;
+        font-size: 14px;
+        width: 100%;
+        color: #6c757d;
 
-}
+    }
 
-.contact .form-control:focus{
-  outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(136, 136, 136, 0.25)!important;
-}
+    .contact .form-control:focus{
+      outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(136, 136, 136, 0.25)!important;
+    }
 
-.contact button.btn {
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 15px;
-    background: #4CAF50;
-    color: #ffffff;
-}
+    .contact button.btn {
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 15px;
+        background: #4CAF50;
+        color: #ffffff;
+    }
 
-.contact .title h3 {
-    font-size: 18px;
-    font-weight: 600;
-}
+    .contact .title h3 {
+        font-size: 18px;
+        font-weight: 600;
+    }
 
-.contact .title p {
-    font-size: 14px;
-    font-weight: 400;
-    color: #999;
-    line-height: 1.6;
-    margin: 0 0 40px;
-}
+    .contact .title p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #999;
+        line-height: 1.6;
+        margin: 0 0 40px;
+    }
 
-.contact .content .info {
-    margin-top: 30px;
-}
-.contact .content .info i {
-    font-size: 30px;
-    padding: 0;
-    margin: 0;
-    color: #02434b;
-    margin-right: 20px;
-    text-align: center;
-    width: 20px;
-}
-.contact .content .info h4 {
-    font-size: 13px;
-    line-height: 1.4;
-}
+    .contact .content .info {
+        margin-top: 30px;
+    }
+    .contact .content .info i {
+        font-size: 30px;
+        padding: 0;
+        margin: 0;
+        color: #02434b;
+        margin-right: 20px;
+        text-align: center;
+        width: 20px;
+    }
+    .contact .content .info h4 {
+        font-size: 13px;
+        line-height: 1.4;
+    }
 
-.contact .content .info h4 span {
-    font-size: 13px;
-    font-weight: 300;
-    color: #999999;
-}
+    .contact .content .info h4 span {
+        font-size: 13px;
+        font-weight: 300;
+        color: #999999;
+    }
 
-.error {
-    display: none;
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-}
+    .error {
+        display: none;
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
 
-#successMessage {
-    display: none;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    color: #155724;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 5px;
-}
+    #successMessage {
+        display: none;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
 
   </style>
 
@@ -193,7 +171,7 @@
 <body>
 
   <header>
-    <h1>Contact</h1>
+    <h1>CONTACT</h1>
   </header>
 
   <nav>
