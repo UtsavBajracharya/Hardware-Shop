@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
-  
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   -->
+  
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -80,7 +80,7 @@
 }
 
 .contact .heading h2 span {
-    color: #ff9100;
+    color: #4CAF50;
 }
 
 .contact .heading p {
@@ -94,18 +94,36 @@
 
 .contact .form-control {
     padding: 25px;
-    font-size: 13px;
     margin-bottom: 10px;
     background: #f9f9f9;
     border: 0;
     border-radius: 10px;
+    font-size: 14px;
+}
+
+
+.contact .selectoption{
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border: 0;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    color: #6c757d;
+
+}
+
+.contact .form-control:focus{
+  outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(136, 136, 136, 0.25)!important;
 }
 
 .contact button.btn {
     padding: 10px;
     border-radius: 10px;
     font-size: 15px;
-    background: #ff9100;
+    background: #4CAF50;
     color: #ffffff;
 }
 
@@ -145,15 +163,40 @@
     color: #999999;
 }
 
+.error {
+    display: none;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#successMessage {
+    display: none;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+
+/* Position the arrow on the right */
+select[data-selected] {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 16px;
+}
 
   </style>
 
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script> -->
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -174,53 +217,19 @@
     <a href="Contact">Contact</a>
   </nav>
 
-  <!-- <form action="#" method="post">
-    <h1>Contact Us</h1>
-    <p>Please take a moment to get in touch, we will get back to you shortly.</p>
-  
-    <div class="column">
-      <label for="the-name">Your Name</label>
-      <input type="text" name="name" id="the-name">
-  
-      <label for="the-email">Email Address</label>
-      <input type="email" name="email" id="the-email">
-  
-      <label for="the-phone">Phone Number</label>
-      <input type="tel" name="phone" id="the-phone">
-  
-      <label for="option">Who do you want to contact?</label>
-      <select name="option" id="the-reason">
-      <option value="">Choose one</option>
-      <option value="superadmin">Superadmin</option>
-      <option value="manager">Product Manager</option>
-      <option value="leader">Shift leader</option>
-    </select>
-
-
-    </div>
-    <div class="column">
-      <label for="the-message">Message</label>
-      <textarea name="message" id="the-message"></textarea>
-      <label>
-      <input type="checkbox" name="newsletter" value="yes"> Notify 
-      </label>
-      <input type="submit" value="Send Message">
-    </div>
-  </form> -->
-
   <section class="contact" id="contact">
     <div class="container">
         <div class="heading text-center">
             <h2>Contact
                 <span> Us </span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                <br>incididunt ut labore et dolore magna aliqua.</p>
+            <p>Have questions, feedback, or need assistance? We're here to help! 
+                <br>You can reach us through the following contact form</p>
         </div>
         <div class="row">
             <div class="col-md-5">
                 <div class="title">
                     <h3>Contact detail</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+                    <p>Feel free to give us a call or message during our business hours. </p>
                 </div>
                 <div class="content">
                     <!-- Info-1 -->
@@ -228,47 +237,125 @@
                         <i class="fas fa-mobile-alt"></i>
                         <h4 class="d-inline-block">PHONE :
                             <br>
-                            <span>+12457836913 , +12457836913</span></h4>
+                            <span>+457-256-7894 , +647-924-7598</span></h4>
                     </div>
                     <!-- Info-2 -->
                     <div class="info">
                         <i class="far fa-envelope"></i>
                         <h4 class="d-inline-block">EMAIL :
                             <br>
-                            <span>example@info.com</span></h4>
+                            <span>davidscheme14@techarmy.com</span></h4>
                     </div>
                     <!-- Info-3 -->
                     <div class="info">
                         <i class="fas fa-map-marker-alt"></i>
                         <h4 class="d-inline-block">ADDRESS :<br>
-                            <span>6743 last street , Abcd, Xyz</span></h4>
+                            <span>6743 last street , Toronto, Ontario</span></h4>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-7">
 
-                <form>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" placeholder="Name">
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="email" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
+              <form id="contactForm" onsubmit="return validateForm()">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="Name" name="name" required>
+                        <span id="nameError" class="error"></span>
                     </div>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="5" id="comment" placeholder="Message"></textarea>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" placeholder="Email" name="email" required>
+                        <span id="emailError" class="error"></span>
                     </div>
-                    <button class="btn btn-block" type="submit">Send Now!</button>
-                </form>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" placeholder="Subject" name="subject" required>
+                        <span id="subjectError" class="error"></span>
+                    </div>
+                    <div class="col-sm-12">
+                          <select class="selectoption" name="contact">
+                            <option value="" disabled selected>Who do you want to contact?</option>
+                            <option value="1">Superadmin</option>
+                            <option value="2">Product Manager</option>
+                            <option value="3">Customer Service </option>
+                          </select>
+                            <span id="contactError" class="error"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" id="comment" placeholder="Message" name="message" required></textarea>
+                    <span id="messageError" class="error"></span>
+                </div>
+                <button class="btn btn-block" type="submit">Send Now!</button>
+            </form>
+            <div id="successMessage" class="alert alert-success" role="alert">
+              Message sent successfully!
+          </div>
+            
             </div>
         </div>
     </div>
 </section>
+
+<script>
+
+
+  function validateForm() {
+      var name = document.forms["contactForm"]["name"].value;
+      var email = document.forms["contactForm"]["email"].value;
+      var subject = document.forms["contactForm"]["subject"].value;
+      var contact = document.forms["contactForm"]["contact"].value;
+      var message = document.forms["contactForm"]["message"].value;
+
+      var isValid = true;
+
+      if (name == "") {
+          document.getElementById("nameError").innerHTML = "Please enter your name";
+          isValid = false;
+      } else {
+          document.getElementById("nameError").innerHTML = "";
+      }
+
+      if (email == "") {
+          document.getElementById("emailError").innerHTML = "Please enter your email";
+          isValid = false;
+      } else {
+          document.getElementById("emailError").innerHTML = "";
+      }
+
+      if (subject == "") {
+          document.getElementById("subjectError").innerHTML = "Please enter the subject";
+          isValid = false;
+      } else {
+          document.getElementById("subjectError").innerHTML = "";
+      }
+
+      if (contact == "") {
+          document.getElementById("contactError").innerHTML = "Please select the contact person";
+          isValid = false;
+      } else {
+          document.getElementById("contactError").innerHTML = "";
+      }
+
+      if (message == "") {
+          document.getElementById("messageError").innerHTML = "Please enter your message";
+          isValid = false;
+      } else {
+          document.getElementById("messageError").innerHTML = "";
+      }
+
+      if (isValid) {
+          document.getElementById("successMessage").style.display = "block";
+          document.getElementById("contactForm").reset();
+          setTimeout(function(){
+              document.getElementById("successMessage").style.display = "none";
+          }, 10000); // Hide success message after 5 seconds
+      }
+
+      return false; // Prevent form submission
+  }
+</script>
+
+
 
 </body>
 
