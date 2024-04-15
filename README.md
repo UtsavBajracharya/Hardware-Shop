@@ -1,5 +1,5 @@
 # Hardware Shop by TechArmy
-  Python Django + MongoDB
+  - Python Django + MongoDB
 
   ## Project Requirements
   - pip install django 
@@ -11,7 +11,7 @@
   ## Run Project
   - python manage.py runserver
 
-#Team Members
+# Team Members
 - Ranish Shrestha
 - Rahul Kathroju
 - Utsav Bajracharya
