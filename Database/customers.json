@@ -1,5 +1,5 @@
 [{
-    "customer_id": "1001",
+    "customerId": "1001",
     "firstName": "John",
     "lastName": "Smith",
     "dob": "1996-09-21",
@@ -15,7 +15,7 @@
 },
 
 {
-    "customer_id": "1002",
+    "customerId": "1002",
     "firstName": "Byan",
     "lastName": "Dorich",
     "dob": "1993-04-05",
@@ -31,7 +31,7 @@
 },
 
 {
-    "customer_id": "1003",
+    "customerId": "1003",
     "firstName": "Bob",
     "lastName": "Miller",
     "dob": "1988-11-12",
@@ -47,7 +47,7 @@
 
 
   {
-    "customer_id": "1004",
+    "customerId": "1004",
     "firstName": "Charlie",
     "lastName": "Davis",
     "dob": "1995-07-30",
@@ -63,7 +63,7 @@
 
 
   {
-    "customer_id": "1005",
+    "customerId": "1005",
     "firstName": "David",
     "lastName": "Wilson",
     "dob": "1982-03-17",
@@ -79,7 +79,7 @@
 
 
   {
-    "customer_id": "1006",
+    "customerId": "1006",
     "firstName": "Emily",
     "lastName": "Taylor",
     "dob": "1990-05-29",
@@ -95,7 +95,7 @@
 
 
   {
-    "customer_id": "1007",
+    "customerId": "1007",
     "firstName": "Frank",
     "lastName": "Anderson",
     "dob": "1976-12-03",
@@ -111,7 +111,7 @@
 
 
   {
-    "customer_id": "1008",
+    "customerId": "1008",
     "firstName": "Grace",
     "lastName": "Martinez",
     "dob": "1999-02-14",
@@ -127,7 +127,7 @@
 
 
   {
-    "customer_id": "1009",
+    "customerId": "1009",
     "firstName": "Henry",
     "lastName": "Garcia",
     "dob": "1987-08-09",
@@ -143,7 +143,7 @@
 
 
   {
-    "customer_id": "1010",
+    "customerId": "1010",
     "firstName": "Ivy",
     "lastName": "Lopez",
     "dob": "1993-01-25",
@@ -159,7 +159,7 @@
 
 
   {
-    "customer_id": "1011",
+    "customerId": "1011",
     "firstName": "Jack",
     "lastName": "Hernandez",
     "dob": "1982-06-18",
@@ -175,7 +175,7 @@
 
 
   {
-    "customer_id": "1012",
+    "customerId": "1012",
     "firstName": "Katie",
     "lastName": "Young",
     "dob": "1991-10-07",
@@ -191,7 +191,7 @@
 
 
   {
-    "customer_id": "1013",
+    "customerId": "1013",
     "firstName": "Liam",
     "lastName": "Lee",
     "dob": "1989-04-01",
@@ -207,7 +207,7 @@
 
 
   {
-    "customer_id": "1014",
+    "customerId": "1014",
     "firstName": "Mia",
     "lastName": "King",
     "dob": "1986-11-24",
@@ -223,7 +223,7 @@
 
 
   {
-    "customer_id": "1015",
+    "customerId": "1015",
     "firstName": "Noah",
     "lastName": "Wright",
     "dob": "1983-07-11",
@@ -239,7 +239,7 @@
 
 
   {
-    "customer_id": "1016",
+    "customerId": "1016",
     "firstName": "Olivia",
     "lastName": "Adams",
     "dob": "1988-04-30",
@@ -255,7 +255,7 @@
 
 
   {
-    "customer_id": "1017",
+    "customerId": "1017",
     "firstName": "Peter",
     "lastName": "Perez",
     "dob": "1987-02-14",
@@ -271,7 +271,7 @@
 
 
   {
-    "customer_id": "1018",
+    "customerId": "1018",
     "firstName": "Quinn",
     "lastName": "Gonzalez",
     "dob": "1992-12-25",
@@ -287,7 +287,7 @@
 
 
   {
-    "customer_id": "1019",
+    "customerId": "1019",
     "firstName": "Ryan",
     "lastName": "Rodriguez",
     "dob": "1995-09-18",
@@ -303,7 +303,7 @@
 
 
   {
-    "customer_id": "1020",
+    "customerId": "1020",
     "firstName": "Sophia",
     "lastName": "Hernandez",
     "dob": "1986-03-07",
@@ -319,7 +319,7 @@
 
 
   {
-    "customer_id": "1021",
+    "customerId": "1021",
     "firstName": "Thomas",
     "lastName": "Lopez",
     "dob": "1989-08-22",
@@ -335,7 +335,7 @@
 
 
   {
-    "customer_id": "1022",
+    "customerId": "1022",
     "firstName": "Uma",
     "lastName": "Chavez",
     "dob": "1991-04-10",
@@ -351,7 +351,7 @@
 
 
   {
-    "customer_id": "1023",
+    "customerId": "1023",
     "firstName": "Vincent",
     "lastName": "Nguyen",
     "dob": "1994-10-03",
@@ -367,7 +367,7 @@
 
 
   {
-    "customer_id": "1024",
+    "customerId": "1024",
     "firstName": "Wendy",
     "lastName": "Kim",
     "dob": "1996-12-28",
@@ -383,7 +383,7 @@
 
 
   {
-    "customer_id": "1025",
+    "customerId": "1025",
     "firstName": "Xavier",
     "lastName": "Patel",
     "dob": "1993-05-17",
@@ -399,7 +399,7 @@
 
 
   {
-    "customer_id": "1026",
+    "customerId": "1026",
     "firstName": "Yara",
     "lastName": "Singh",
     "dob": "1995-08-08",
@@ -414,7 +414,7 @@
   },
   
   {
-    "customer_id": "1027",
+    "customerId": "1027",
     "firstName": "Zachary",
     "lastName": "Gomez",
     "dob": "1988-02-20",
