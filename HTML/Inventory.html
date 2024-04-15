@@ -32,7 +32,17 @@
         background-color: #f2f2f2;
         padding: 10px;
         text-align: center;
+        margin-bottom: 12px;
       }
+
+      #searchInput {
+        width: 40%;
+        border: 1px solid;
+        border-radius: 20px;
+        font-size: 14px;
+        padding: 8px 14px;
+        border-color: #bebebe;
+      } 
       .table-container {
         margin: 20px;
         overflow-x: auto;
@@ -163,7 +173,7 @@
       <a href="Contact">Contact</a>
     </nav>
     <div class="search-container" id="search">
-      <input type="text" id="searchInput" onkeyup="searchInventory()" placeholder="Search inventory...">
+      <input type="text" id="searchInput" onkeyup="searchInventory()" placeholder="Search Inventory...">
     </div>
 
     <div class="operations" id="operations">
@@ -399,6 +409,7 @@
         td.innerText = newValue;
       }
     }
+
     
   </script>
   </html>

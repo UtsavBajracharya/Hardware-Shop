@@ -29,16 +29,5 @@ urlpatterns = [
     path('',include('Prediction.urls')),
     path('',include('Contact.urls')),
     path('',include('Sales.urls')),
-
-    # path('admin/', admin.site.urls),
-    # path('Billing', views.Billing, name='Billing'),
-    # path('Dashboard', views.Dashboard, name='Dashboard'),
-    # path('LandingPage', views.LandingPage, name='LandingPage'),
-    # path('LowInventory', views.LowInventory, name='LowInventory'),
-    # path('OnlineOrders', views.OnlineOrders, name='OnlineOrders'),
-    # path('Prediction', views.Prediction, name='Prediction'),
-    # path('ProductOrders', views.ProductOrders, name='ProductOrders'),
-    # path('Sales', views.Sales, name='Sales'),
-    # path('Inventory', views.Inventory, name='Inventory'),
 ]
 

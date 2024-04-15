@@ -29,9 +29,19 @@
       margin: 0 10px;
     }
     .search-container {
-      background-color: #f2f2f2;
-      padding: 10px;
-      text-align: center;
+        background-color: #f2f2f2;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+      #searchInput {
+        width: 40%;
+        border: 1px solid;
+        border-radius: 20px;
+        font-size: 14px;
+        padding: 8px 14px;
+        border-color: #bebebe;
     }
     .table-container {
       margin: 20px;
@@ -144,6 +154,25 @@ td:nth-child(3) { /* Product Image*/
     .operations button:hover {
       background-color: #45a049;
     }
+
+    .btn {
+      padding: 12px 20px;
+      background-color: #ff5b0f;
+      white-space:nowrap;
+      color: #fff ;
+      border: none;
+      border-radius: 30px;
+      width: 85%;
+    }
+
+    .btn:hover {
+      cursor: pointer;
+      border: none;
+      background-color: #ff7e42;
+      color: #fff ;
+    }
+
+
   </style>
 
 </head>
@@ -203,7 +232,9 @@ td:nth-child(3) { /* Product Image*/
             <td onclick="editField(this)">{{ item.product_status }}</td>
             <td onclick="editField(this)">{{ item.quantity }}</td>
             <td onclick="editField(this)">$ {{ item.price }}</td>
-            <td><a href="#" onclick="showOrderDetails('{{ item.product_id }}')">Order Now</a></td>          </tr>
+            <td>
+              <button type="button" class="btn btn-primary" onclick="showOrderDetails('{{ item.product_id }}')">Order Now</button>
+            </td></tr>
         {% endfor %}
       </tbody>
     </table>
