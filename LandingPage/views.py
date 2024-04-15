@@ -3,10 +3,26 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import *
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_protect
 
+@csrf_protect
 def Login(request):
-    #check username and password here
-    return redirect(reverse('LandingPage')) # render(request, "LandingPage.html")
+    userName = request.POST.get('username')
+    passWord = request.POST.get('password')
+    result = list(user_data.find({'username':userName,'password':passWord}))
+    if len(result) != 0:       
+        return redirect(reverse('LandingPage')) # render(request, "LandingPage.html")
+    else:
+        script = """
+        <script>
+            alert('Invalid Login Credentials!');
+            window.location.href = "login";
+        </script>
+        """
+        return HttpResponse(script)
+
+def RedirectLogin(request):
+    return render(request, "login.html")
 
 def LandingPage(request):
     # pending orders

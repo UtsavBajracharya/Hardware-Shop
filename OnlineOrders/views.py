@@ -5,6 +5,8 @@ from .models import *
 from django.http import JsonResponse
 import json
 import random
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_exempt
 
 
 class OnlineOrder:
@@ -51,6 +53,7 @@ def parse_order_items(order_items_data):
         order_items.append(order_item)
     return order_items
 
+@csrf_exempt
 def orderShipped(request):
     updatedRowsList=handle_ajax_request(request)
     
@@ -78,6 +81,7 @@ def orderShipped(request):
         # inventory_data.updae_on/e('product_id':int)
     return HttpResponse("request")
 
+@csrf_exempt
 def cancelOrders(request):
     updatedRowsList=handle_ajax_request(request)
     for document in updatedRowsList:

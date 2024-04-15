@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('AdminLogin/LandingPage', views.LandingPage, name='LandingPage'),
-    path('AdminLogin/', views.Login, name='Login')
+    path('AdminLogin/', views.Login, name='Login'),
+    path('AdminLogin/login', views.RedirectLogin, name='RedirectLogin')
 ]

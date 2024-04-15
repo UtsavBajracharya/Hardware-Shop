@@ -3,6 +3,8 @@ from django.shortcuts import render
 from .models import *
 from django.http import JsonResponse
 import json
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 class Product:
@@ -62,7 +64,7 @@ def addProduct(request):
         """
         return HttpResponse(script)
 
-
+@csrf_exempt
 def updateProducts(request):
     updatedRowsList=handle_ajax_request(request)
     for document in updatedRowsList:
@@ -105,7 +107,7 @@ def handle_ajax_request(request):
         # For example, you might want to return a JSON response
         return updatedRowsList
     
-
+@csrf_exempt
 def deleteProducts(request):
     updatedRowsList=handle_ajax_request(request)
     for document in updatedRowsList:

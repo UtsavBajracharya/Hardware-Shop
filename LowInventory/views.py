@@ -7,7 +7,7 @@ from .models import *
 from django.http import JsonResponse
 import json
 import random
-
+from django.views.decorators.csrf import csrf_protect
 
 def lowInventory(request):
     query = {

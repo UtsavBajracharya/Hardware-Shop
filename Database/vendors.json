@@ -4,5 +4,18 @@
         "vendor_name": "Markham Tools",
         "vendor_address": "Markham",
         "vendor_contact":  "4376618860"
+    },
+    {
+        "vendor_id": 2,
+        "vendor_name": "Scarborough Tools",
+        "vendor_address": "Scarborough",
+        "vendor_contact":  "4376618861"
+    },
+    {
+        "vendor_id": 3,
+        "vendor_name": "York Tools",
+        "vendor_address": "York",
+        "vendor_contact":  "4376618862"
     }
+
 ]
