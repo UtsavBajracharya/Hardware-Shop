@@ -91,12 +91,22 @@ WSGI_APPLICATION = 'mvc.wsgi.application'
 #     }
 # }
 # DATABASES = {
-#      'default': {
-#         'ENGINE': 'djongo',
-#         'NAME': 'hardware_shop',
-        
+#     "nonrel": {
+#         "ENGINE": "djongo",
+#         "NAME": os.environ.get('hardware_shop'),
+#         "CLIENT": {
+#             "host": os.environ.get('mongo'),
+#             "port": int(os.environ.get('27017')),
+#             "username": os.environ.get('ranishstha'),
+#             "password": os.environ.get('o96w9YihM24iYDbG'),
+#         },
+#         'TEST': {
+#             'MIRROR': 'default',
+#         },
 #     }
 # }
+
+# DATABASE_ROUTERS = ['core.utils.db_routers.NonRelRouter', ]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
