@@ -12,6 +12,10 @@
   - python manage.py runserver
 
 # Team Members
-- Ranish Shrestha
+- Ranish Shrestha 
 - Rahul Kathroju
 - Utsav Bajracharya
+
+# For login
+  - uesrname: admin
+  - password: admin
