@@ -1,11 +1,17 @@
 # Hardware Shop by TechArmy
   Python Django + MongoDB
+
   ## Project Requirements
-  pip install django 
-  pip install pymongo
+  - pip install django 
+  - pip install pymongo
 
   ## Database setup
-  python Database/seed_TechArmy.py
+  - python Database/seed_TechArmy.py
   
   ## Run Project
-  python manage.py runserver
+  - python manage.py runserver
+
+#Team Members
+- Ranish Shrestha
+- Rahul Kathroju
+- Utsav Bajracharya
