@@ -5,7 +5,7 @@ import json
 
 def seed_database():
     client = MongoClient('localhost', 27017)  # Connect to MongoDB server
-    db = client.hardware_shop_2 # Create a database named 'hardware_shop'
+    db = client.hardware_shop # Create a database named 'hardware_shop'
     db.product_orders.drop()  # Drop the collection if it already exists
     db.products.drop() # Drop the collection if it already exists
     db.online_orders.drop() # Drop the collection if it already exists
