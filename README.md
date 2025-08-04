@@ -11,11 +11,6 @@
   ## Run Project
   - python manage.py runserver
 
-# Team Members
-- Ranish Shrestha 
-- Rahul Kathroju
-- Utsav Bajracharya
-
 # For login
   - uesrname: admin
   - password: admin
